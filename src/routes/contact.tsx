@@ -88,8 +88,9 @@ function Contact() {
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">Sebeta, Ethiopia</p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Street address — placeholder, to be added by ARJ.
+                    Amard Soap Manufacture — see the map below for the exact factory location.
                   </p>
+
                 </div>
               </li>
               <li className="surface-card flex items-start gap-3 p-5">
