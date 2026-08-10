@@ -88,8 +88,9 @@ function Contact() {
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">Sebeta, Ethiopia</p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    Street address — placeholder, to be added by ARJ.
+                    Amard Soap Manufacture — see the map below for the exact factory location.
                   </p>
+
                 </div>
               </li>
               <li className="surface-card flex items-start gap-3 p-5">
@@ -204,19 +205,28 @@ function Contact() {
         <div className="section-shell">
           <SectionHeading
             eyebrow="Find Us"
-            title="Sebeta, Ethiopia"
-            description="Our factory is located in Sebeta, Ethiopia. The exact street address can be added once confirmed."
+            title="Amard Soap Manufacture, Sebeta"
+            description="Our factory is located in Sebeta, Ethiopia. Use the map below for directions to the plant."
           />
           <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-card">
             <iframe
-              title="Map of Sebeta, Ethiopia"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=38.55%2C8.87%2C38.68%2C8.97&layer=mapnik&marker=8.9167%2C38.6167"
+              title="Map of Amard Soap Manufacture, Sebeta, Ethiopia"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=38.6405%2C8.9346%2C38.6605%2C8.9446&layer=mapnik&marker=8.9396372%2C38.6504701"
               loading="lazy"
               className="h-[380px] w-full border-0 sm:h-[460px]"
             />
           </div>
+          <a
+            href="https://maps.app.goo.gl/bLUKvSUnSMHZJKo29"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
+          >
+            Get directions on Google Maps
+          </a>
         </div>
       </section>
+
     </>
   );
 }
