@@ -97,15 +97,10 @@ function FactoryPage() {
               title="Product stock ready for distribution"
               description="Finished AMARD and ADWA cartons are stored at the factory and released for distribution from the factory and through Merkato."
             />
-            <div className="mt-6 rounded-lg border border-dashed border-border bg-background p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                Placeholder — factory photos
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Additional photographs of the ARJ facility, machinery and storage areas can be added
-                here.
-              </p>
-            </div>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              ADWA is packed 50 x 200g and 50 x 220g per carton, with cartons palletised in the
+              factory storage area before dispatch.
+            </p>
           </div>
           <img
             src={photos.adwaCartonsWarehouse}
@@ -117,6 +112,31 @@ function FactoryPage() {
           />
         </div>
       </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="section-shell">
+          <SectionHeading
+            centered
+            eyebrow="Factory Gallery"
+            title="Inside the ARJ facility"
+            description="Production, wrapping, packing and storage of AMARD and ADWA laundry soap in Sebeta, Ethiopia."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {factoryGallery.map((photo) => (
+              <img
+                key={photo.src}
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                width={640}
+                height={640}
+                className="aspect-square w-full rounded-2xl border border-border object-cover shadow-card"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       <ContactCta />
     </>
