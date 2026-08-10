@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
-import factoryImage from "@/assets/factory.jpg";
+import { photos } from "@/components/site/photos";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -73,7 +73,7 @@ function About() {
             </p>
           </div>
           <img
-            src={factoryImage}
+            src={photos.amardBarsStacked}
             alt="Modern soap manufacturing equipment at the ARJ factory in Sebeta"
             loading="lazy"
             width={1600}

@@ -5,7 +5,7 @@ import { ContactCta } from "@/components/site/ContactCta";
 import { SectionHeading } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { amardImage, products, whyChooseArj } from "@/components/site/products";
-import factoryImage from "@/assets/factory.jpg";
+import { photos } from "@/components/site/photos";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -142,8 +142,8 @@ function Home() {
       <section className="border-y border-border bg-secondary py-16 sm:py-20">
         <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
           <img
-            src={factoryImage}
-            alt="Soap production line inside the ARJ factory"
+            src={photos.packagingMachine}
+            alt="ADWA branded packaging film running through the wrapping machine at the ARJ factory"
             loading="lazy"
             width={1600}
             height={912}

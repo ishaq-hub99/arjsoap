@@ -3,8 +3,7 @@ import { Boxes, Cog, Factory, PackageCheck, Truck, Warehouse } from "lucide-reac
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
-import cartonsImage from "@/assets/adwa-cartons.jpg";
-import factoryImage from "@/assets/factory.jpg";
+import { factoryGallery, photos } from "@/components/site/photos";
 
 export const Route = createFileRoute("/factory")({
   head: () => ({
@@ -71,8 +70,8 @@ function FactoryPage() {
       <section className="py-16 sm:py-20">
         <div className="section-shell">
           <img
-            src={factoryImage}
-            alt="Soap production line with green soap bars inside the ARJ factory"
+            src={photos.packagingMachine}
+            alt="ADWA branded wrapping film feeding through the packaging machine at the ARJ factory"
             loading="lazy"
             width={1600}
             height={912}
@@ -98,19 +97,14 @@ function FactoryPage() {
               title="Product stock ready for distribution"
               description="Finished AMARD and ADWA cartons are stored at the factory and released for distribution from the factory and through Merkato."
             />
-            <div className="mt-6 rounded-lg border border-dashed border-border bg-background p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                Placeholder — factory photos
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Additional photographs of the ARJ facility, machinery and storage areas can be added
-                here.
-              </p>
-            </div>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              ADWA is packed 50 x 200g and 50 x 220g per carton, with cartons palletised in the
+              factory storage area before dispatch.
+            </p>
           </div>
           <img
-            src={cartonsImage}
-            alt="Stacked cartons of ADWA laundry soap in the factory storage area"
+            src={photos.adwaCartonsWarehouse}
+            alt="Pallets of ADWA laundry soap cartons stacked in the factory storage area"
             loading="lazy"
             width={1408}
             height={912}
@@ -118,6 +112,31 @@ function FactoryPage() {
           />
         </div>
       </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="section-shell">
+          <SectionHeading
+            centered
+            eyebrow="Factory Gallery"
+            title="Inside the ARJ facility"
+            description="Production, wrapping, packing and storage of AMARD and ADWA laundry soap in Sebeta, Ethiopia."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {factoryGallery.map((photo) => (
+              <img
+                key={photo.src}
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                width={640}
+                height={640}
+                className="aspect-square w-full rounded-2xl border border-border object-cover shadow-card"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       <ContactCta />
     </>
