@@ -27,10 +27,10 @@ export function ContactCta() {
               <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
               <span className="flex flex-col text-foreground">
                 <a href="tel:+251911314758" className="font-semibold hover:text-primary">
-                  +251 911 314 758
+                  +251 911 31 47 58
                 </a>
                 <a href="tel:+251911235104" className="font-semibold hover:text-primary">
-                  +251 911 235 104
+                  +251 911 23 5104
                 </a>
               </span>
             </li>
