@@ -4,7 +4,7 @@ import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { products } from "@/components/site/products";
-import cartonsImage from "@/assets/adwa-cartons.jpg";
+import { photos } from "@/components/site/photos";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -45,8 +45,8 @@ function Products() {
       <section className="border-t border-border bg-secondary py-16 sm:py-20">
         <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
           <img
-            src={cartonsImage}
-            alt="Cartons of ADWA laundry soap in the ARJ product storage area"
+            src={photos.adwaCartonsWarehouse}
+            alt="Pallets of 50 x 200g ADWA laundry soap cartons in the ARJ product storage area"
             loading="lazy"
             width={1408}
             height={912}

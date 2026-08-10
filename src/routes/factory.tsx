@@ -3,8 +3,7 @@ import { Boxes, Cog, Factory, PackageCheck, Truck, Warehouse } from "lucide-reac
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
-import cartonsImage from "@/assets/adwa-cartons.jpg";
-import factoryImage from "@/assets/factory.jpg";
+import { factoryGallery, photos } from "@/components/site/photos";
 
 export const Route = createFileRoute("/factory")({
   head: () => ({
@@ -71,8 +70,8 @@ function FactoryPage() {
       <section className="py-16 sm:py-20">
         <div className="section-shell">
           <img
-            src={factoryImage}
-            alt="Soap production line with green soap bars inside the ARJ factory"
+            src={photos.packagingMachine}
+            alt="ADWA branded wrapping film feeding through the packaging machine at the ARJ factory"
             loading="lazy"
             width={1600}
             height={912}
@@ -109,8 +108,8 @@ function FactoryPage() {
             </div>
           </div>
           <img
-            src={cartonsImage}
-            alt="Stacked cartons of ADWA laundry soap in the factory storage area"
+            src={photos.adwaCartonsWarehouse}
+            alt="Pallets of ADWA laundry soap cartons stacked in the factory storage area"
             loading="lazy"
             width={1408}
             height={912}
