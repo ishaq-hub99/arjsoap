@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { products } from "@/components/site/products";
+import { photos } from "@/components/site/photos";
 
 export const Route = createFileRoute("/brands")({
   head: () => ({
@@ -87,6 +88,35 @@ function Brands() {
           </div>
         </section>
       ))}
+
+      <section className="border-t border-border bg-secondary py-16 sm:py-20">
+        <div className="section-shell">
+          <SectionHeading
+            centered
+            eyebrow="ADWA — Victory For Purity"
+            title="ADWA in everyday laundry"
+            description="ADWA laundry soap bars, produced at the ARJ factory in Sebeta, Ethiopia."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { src: photos.adwaVictoryGrater, alt: "ADWA laundry soap bar on a wooden washboard with water running over it" },
+              { src: photos.adwaSunkissed, alt: "ADWA yellow laundry soap bar on a washboard beside folded towels" },
+              { src: photos.adwaVictoryTowels, alt: "ADWA laundry soap bar resting on white folded towels" },
+              { src: photos.adwaLaundryLine, alt: "ADWA 220g laundry soap bar on a marble board in front of freshly washed white clothes" },
+            ].map((photo) => (
+              <img
+                key={photo.src}
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                width={640}
+                height={640}
+                className="aspect-square w-full rounded-2xl border border-border object-cover shadow-card"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 sm:py-20">
         <div className="section-shell">
