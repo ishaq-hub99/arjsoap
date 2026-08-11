@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Boxes, Cog, Factory, PackageCheck, Truck, Warehouse } from "lucide-react";
+import { Boxes, ClipboardCheck, Cog, Factory, PackageCheck, Truck, Warehouse } from "lucide-react";
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
@@ -12,50 +12,60 @@ export const Route = createFileRoute("/factory")({
       {
         name: "description",
         content:
-          "Inside the ARJ soap factory in Sebeta, Ethiopia: manufacturing facility, modern machinery imported from China, production, packaging, storage and distribution.",
+          "Inside the ARJ manufacturing facility in Sebeta, Ethiopia: modern machinery imported from China, production, packaging, storage and distribution.",
       },
       { property: "og:title", content: "Our Factory — ARJ Soap Detergent & Manufacturing" },
       {
         property: "og:description",
         content:
-          "A modern Ethiopian soap manufacturing facility in Sebeta, using machinery imported from China.",
+          "A dedicated Ethiopian soap manufacturing facility in Sebeta, equipped with modern machinery imported from China.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: FactoryPage,
 });
 
-const capabilities = [
+const sections = [
   {
     icon: Factory,
-    title: "Manufacturing facility",
-    body: "Our factory in Sebeta, Ethiopia manufactures both AMARD and ADWA solid laundry soap. It is not extremely large, but it has significant production capability.",
+    title: "Factory Overview",
+    body: "ARJ operates a dedicated manufacturing facility in Sebeta, Ethiopia, where both AMARD and ADWA solid laundry soap are produced.",
   },
   {
     icon: Cog,
-    title: "Modern machinery",
-    body: "The facility is equipped with modern manufacturing machinery imported from China to support consistent soap production.",
+    title: "Modern Machinery",
+    body: "The facility is equipped with modern manufacturing machinery imported from China.",
   },
   {
     icon: Boxes,
-    title: "Production process",
-    body: "Soap is produced, formed and cut into solid bars for laundry use as part of a controlled in-house production process.",
+    title: "Production",
+    body: "Soap is produced, formed and cut into solid bars for laundry use as part of an in-house production process.",
   },
   {
     icon: PackageCheck,
     title: "Packaging",
-    body: "Bars are wrapped in clean, clearly branded AMARD and ADWA packaging and packed into cartons.",
+    body: "Bars are wrapped in clearly branded AMARD and ADWA packaging and packed into cartons.",
   },
   {
     icon: Warehouse,
-    title: "Product storage",
-    body: "The factory maintains a substantial amount of finished product stock in its storage area.",
+    title: "Storage",
+    body: "Finished cartons are held in the product storage area at the facility, ready for dispatch.",
   },
   {
     icon: Truck,
     title: "Distribution",
-    body: "Products are distributed mainly from the factory and through Merkato.",
+    body: "Products are distributed mainly from the facility and through Merkato.",
   },
+];
+
+const processSteps = [
+  { step: "01", title: "Manufacturing", icon: Cog },
+  { step: "02", title: "Quality Check", icon: ClipboardCheck },
+  { step: "03", title: "Packaging", icon: PackageCheck },
+  { step: "04", title: "Storage", icon: Warehouse },
+  { step: "05", title: "Distribution", icon: Truck },
 ];
 
 function FactoryPage() {
@@ -63,57 +73,110 @@ function FactoryPage() {
     <>
       <PageHero
         eyebrow="Our Factory"
-        title="A modern Ethiopian soap manufacturing facility"
-        description="Located in Sebeta, Ethiopia, the ARJ factory handles production, packaging and storage of AMARD and ADWA laundry soap."
+        title="Our Manufacturing Facility"
+        description="Based in Sebeta, Ethiopia, ARJ operates a dedicated manufacturing facility equipped with modern machinery imported from China."
       />
 
-      <section className="py-16 sm:py-20">
+      <section className="py-20 sm:py-28">
         <div className="section-shell">
-          <img
-            src={photos.packagingMachine}
-            alt="ADWA branded wrapping film feeding through the packaging machine at the ARJ factory"
-            loading="lazy"
-            width={1600}
-            height={912}
-            className="w-full rounded-2xl border border-border object-cover shadow-card"
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {capabilities.map((item) => (
-              <div key={item.title} className="surface-card p-6">
-                <item.icon className="h-6 w-6 text-primary" aria-hidden="true" />
-                <h3 className="mt-3 text-base font-extrabold text-foreground">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+          <div className="photo-frame reveal bg-background">
+            <img
+              src={photos.packagingMachine}
+              alt="ADWA branded wrapping film feeding through the packaging machine at the ARJ facility"
+              loading="lazy"
+              width={1600}
+              height={912}
+              className="w-full object-cover"
+            />
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {sections.map((item) => (
+              <div key={item.title} className="surface-card reveal p-7">
+                <item.icon className="h-7 w-7 text-primary" aria-hidden="true" />
+                <h3 className="display-title mt-5 text-lg text-foreground">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-secondary py-16 sm:py-20">
-        <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <SectionHeading
-              eyebrow="Stock &amp; Storage"
-              title="Product stock ready for distribution"
-              description="Finished AMARD and ADWA cartons are stored at the factory and released for distribution from the factory and through Merkato."
-            />
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              ADWA is packed 50 x 200g and 50 x 220g per carton, with cartons palletised in the
-              factory storage area before dispatch.
-            </p>
-          </div>
-          <img
-            src={photos.adwaCartonsWarehouse}
-            alt="Pallets of ADWA laundry soap cartons stacked in the factory storage area"
-            loading="lazy"
-            width={1408}
-            height={912}
-            className="w-full rounded-2xl border border-border object-cover shadow-card"
+      {/* PRODUCTION PROCESS TIMELINE */}
+      <section className="border-y border-border bg-secondary py-20 sm:py-28">
+        <div className="section-shell">
+          <SectionHeading
+            centered
+            eyebrow="Production Process"
+            title="From manufacturing to distribution"
+            description="How AMARD and ADWA laundry soap move through the ARJ facility."
           />
+
+          <ol className="relative mt-14 hidden lg:grid lg:grid-cols-5 lg:gap-6">
+            <span
+              className="absolute left-[10%] right-[10%] top-7 h-px bg-border"
+              aria-hidden="true"
+            />
+            {processSteps.map((s) => (
+              <li key={s.step} className="relative text-center">
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full border border-border bg-background text-primary shadow-card">
+                  <s.icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <p className="mt-5 text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-primary">
+                  {s.step}
+                </p>
+                <h3 className="display-title mt-2 text-base text-foreground">{s.title}</h3>
+              </li>
+            ))}
+          </ol>
+
+          <ol className="mt-12 space-y-5 border-l-2 border-primary/25 pl-7 lg:hidden">
+            {processSteps.map((s) => (
+              <li key={s.step} className="relative">
+                <span
+                  className="absolute -left-[2.2rem] top-5 grid h-5 w-5 place-items-center rounded-full border-2 border-primary bg-background"
+                  aria-hidden="true"
+                />
+                <div className="surface-card flex items-center gap-4 p-5">
+                  <s.icon className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
+                  <div>
+                    <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-primary">
+                      {s.step}
+                    </p>
+                    <h3 className="display-title mt-1 text-base text-foreground">{s.title}</h3>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-20 sm:py-28">
+        <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="reveal">
+            <SectionHeading
+              eyebrow="Storage &amp; Distribution"
+              title="Product stock ready for distribution"
+              description="Finished AMARD and ADWA cartons are stored at the facility and released for distribution from the factory and through Merkato."
+            />
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              Cartons are palletised in the storage area before dispatch.
+            </p>
+          </div>
+          <div className="photo-frame reveal bg-background">
+            <img
+              src={photos.adwaCartonsWarehouse}
+              alt="Pallets of ADWA laundry soap cartons stacked in the storage area"
+              loading="lazy"
+              width={1408}
+              height={912}
+              className="w-full object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border bg-secondary py-20 sm:py-28">
         <div className="section-shell">
           <SectionHeading
             centered
@@ -121,22 +184,22 @@ function FactoryPage() {
             title="Inside the ARJ facility"
             description="Production, wrapping, packing and storage of AMARD and ADWA laundry soap in Sebeta, Ethiopia."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {factoryGallery.map((photo) => (
-              <img
-                key={photo.src}
-                src={photo.src}
-                alt={photo.alt}
-                loading="lazy"
-                width={640}
-                height={640}
-                className="aspect-square w-full rounded-2xl border border-border object-cover shadow-card"
-              />
+              <div key={photo.src} className="photo-frame reveal bg-background">
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  width={640}
+                  height={640}
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
-
 
       <ContactCta />
     </>
