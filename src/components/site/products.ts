@@ -24,15 +24,13 @@ export const products: Product[] = [
     image: amardImage,
     imageAlt: "AMARD Laundry Soap bar in green packaging with the AMARD badge logo",
     description:
-      "AMARD is a solid laundry soap designed for washing clothes. It is long-lasting, produces extra foam and stays soft on hands while washing.",
+      "A solid laundry soap for everyday clothes washing — long-lasting, extra foaming and soft on hands.",
     features: [
-      "Designed for washing clothes",
-      "Long-lasting bar",
-      "Helps provide a deep clean",
+      "Long-lasting",
       "Extra foaming",
-      "Gentle, soft feeling on hands while washing",
-      "Made from 100% vegetable oil, according to the product packaging",
-      "New washing formula",
+      "Powerful cleaning",
+      "Soft on hands while washing",
+      "Made from 100% vegetable oil according to the product packaging",
     ],
   },
   {
@@ -43,44 +41,26 @@ export const products: Product[] = [
     image: adwaImage,
     imageAlt: "ADWA Laundry Soap bar in green packaging, 200g net weight when packed",
     description:
-      "ADWA is a solid laundry soap made for everyday clothes washing, with effective cleaning, extra foaming and a long-lasting bar.",
-    features: [
-      "Designed for washing clothes",
-      "Long-lasting bar",
-      "Extra foaming",
-      "Effective cleaning",
-      "New washing formula",
-    ],
+      "A solid laundry soap made for everyday washing, with effective cleaning and a rich foam.",
+    features: ["Long-lasting", "Extra foaming", "Effective cleaning", "New washing formula"],
   },
 ];
 
 export const whyChooseArj = [
   {
     title: "Long-lasting",
-    body: "Both AMARD and ADWA bars are made to last through everyday laundry use.",
+    body: "Designed to provide lasting use during everyday laundry.",
   },
   {
     title: "Extra foaming",
-    body: "Our formulas produce generous foam for hand washing clothes.",
+    body: "A rich foaming experience during washing.",
   },
   {
     title: "Powerful cleaning",
-    body: "Solid laundry soap built to clean clothes effectively.",
+    body: "Made to help deliver clean clothes.",
   },
   {
     title: "Soft on hands",
-    body: "A gentle, soft feeling on hands while washing.",
-  },
-  {
-    title: "Clean, attractive packaging",
-    body: "Clear brand packaging that is easy to recognise on the shelf.",
-  },
-  {
-    title: "Quality-focused manufacturing",
-    body: "Production at our Sebeta factory is organised around consistent quality.",
-  },
-  {
-    title: "Made for everyday laundry",
-    body: "Practical soap for households that want clean clothes every day.",
+    body: "Designed to provide a softer feeling on hands while washing.",
   },
 ];

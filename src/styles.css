@@ -122,12 +122,6 @@
   }
 }
 
-@utility section-shell {
-  width: 100%;
-  max-width: 80rem;
-  margin-inline: auto;
-  padding-inline: 1.25rem;
-}
 
 @utility eyebrow {
   display: inline-flex;
@@ -168,4 +162,112 @@
     opacity: 1;
     transform: none;
   }
+}
+
+@utility section-shell {
+  width: 100%;
+  max-width: 82.5rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@utility reveal {
+  animation: rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @supports (animation-timeline: view()) {
+    animation-timeline: view();
+    animation-range: entry 0% cover 28%;
+  }
+}
+
+@utility display-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+@utility hairline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  padding: 0.9rem 1.6rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-foreground);
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--input);
+  background-color: var(--background);
+  padding: 0.9rem 1.6rem;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--foreground);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+}
+
+@utility photo-frame {
+  overflow: hidden;
+  border-radius: calc(var(--radius) + 12px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+
+  & img {
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover img {
+    transform: scale(1.04);
+  }
+}
+
+@utility grid-tint {
+  background-image:
+    linear-gradient(to right, oklch(0.475 0.128 152.5 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, oklch(0.475 0.128 152.5 / 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
 }
