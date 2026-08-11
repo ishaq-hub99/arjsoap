@@ -58,10 +58,10 @@ export function Footer() {
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
               <span className="flex flex-col">
                 <a href="tel:+251911314758" className="hover:text-primary">
-                  +251 911 314 758
+                  +251 911 31 47 58
                 </a>
                 <a href="tel:+251911235104" className="hover:text-primary">
-                  +251 911 235 104
+                  +251 911 23 51 04
                 </a>
               </span>
             </li>
