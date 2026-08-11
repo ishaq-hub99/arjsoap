@@ -13,13 +13,15 @@ export const Route = createFileRoute("/products")({
       {
         name: "description",
         content:
-          "Product catalog of ARJ Soap Detergent & Manufacturing: AMARD Laundry Soap and ADWA Laundry Soap, solid laundry soap bars made in Sebeta, Ethiopia.",
+          "Products of ARJ Soap Detergent & Manufacturing: AMARD Laundry Soap and ADWA Laundry Soap, solid laundry soap bars made in Sebeta, Ethiopia.",
       },
       { property: "og:title", content: "ARJ Products — AMARD & ADWA Laundry Soap" },
       {
         property: "og:description",
         content: "Solid laundry soap bars manufactured in Sebeta, Ethiopia.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Products,
@@ -30,41 +32,43 @@ function Products() {
     <>
       <PageHero
         eyebrow="Products"
-        title="Our solid laundry soap catalog"
-        description="ARJ currently produces two solid laundry soaps, both manufactured at our factory in Sebeta, Ethiopia."
+        title="Our solid laundry soaps"
+        description="ARJ produces two solid laundry soaps, both manufactured at our facility in Sebeta, Ethiopia."
       />
 
-      <section className="py-16 sm:py-20">
-        <div className="section-shell grid gap-8 md:grid-cols-2">
+      <section className="py-20 sm:py-28">
+        <div className="section-shell grid gap-8 lg:grid-cols-2">
           {products.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
         </div>
       </section>
 
-      <section className="border-t border-border bg-secondary py-16 sm:py-20">
-        <div className="section-shell grid gap-10 lg:grid-cols-2 lg:items-center">
-          <img
-            src={photos.adwaCartonsWarehouse}
-            alt="Pallets of 50 x 200g ADWA laundry soap cartons in the ARJ product storage area"
-            loading="lazy"
-            width={1408}
-            height={912}
-            className="w-full rounded-2xl border border-border object-cover shadow-card"
-          />
-          <div>
+      <section className="border-t border-border bg-secondary py-20 sm:py-28">
+        <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="photo-frame reveal bg-background">
+            <img
+              src={photos.adwaCartonsWarehouse}
+              alt="Pallets of ADWA laundry soap cartons in the ARJ product storage area"
+              loading="lazy"
+              width={1408}
+              height={912}
+              className="w-full object-cover"
+            />
+          </div>
+          <div className="reveal">
             <SectionHeading
               eyebrow="Availability"
               title="Packed, stored and distributed"
-              description="Finished bars are packed into cartons and held in product storage at the factory. Distribution is mainly from the factory and through Merkato."
+              description="Finished bars are packed into cartons and held in product storage at the facility. Distribution is mainly from the factory and through Merkato."
             />
-            <div className="mt-6 rounded-lg border border-dashed border-border bg-background p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
-                Placeholder
+            <div className="mt-8 rounded-2xl border border-dashed border-input bg-background p-6">
+              <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-muted-foreground">
+                Pack details
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
-                Pack sizes, carton quantities and unit weights can be added here once confirmed by
-                ARJ.
+                Pack sizes, carton quantities and unit weights can be published here once confirmed
+                by ARJ.
               </p>
             </div>
           </div>
