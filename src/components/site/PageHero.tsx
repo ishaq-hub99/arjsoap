@@ -8,18 +8,22 @@ export function PageHero({
   description: string;
 }) {
   return (
-    <section className="border-b border-border bg-secondary">
-      <div className="section-shell py-14 sm:py-20">
+    <section className="relative overflow-hidden border-b border-border bg-secondary">
+      <div className="grid-tint absolute inset-0" aria-hidden="true" />
+      <div className="section-shell relative py-16 sm:py-24">
         <div className="max-w-3xl rise-in">
-          <span className="eyebrow">
-            <span className="h-px w-8 bg-primary" aria-hidden="true" />
+          <span className="hairline-label">
+            <span className="h-px w-10 bg-primary" aria-hidden="true" />
             {eyebrow}
           </span>
-          <h1 className="mt-4 text-3xl font-extrabold text-foreground sm:text-4xl lg:text-5xl">
+          <h1 className="display-title mt-5 text-3xl text-foreground sm:text-5xl lg:text-6xl">
             {title}
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {description}
+          </p>
+          <p className="mt-6 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-muted-foreground">
+            ARJ Soap Detergent &amp; Manufacturing — Sebeta, Ethiopia
           </p>
         </div>
       </div>
@@ -41,16 +45,14 @@ export function SectionHeading({
   return (
     <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       {eyebrow ? (
-        <span className="eyebrow">
-          <span className="h-px w-8 bg-primary" aria-hidden="true" />
+        <span className={centered ? "hairline-label justify-center" : "hairline-label"}>
+          <span className="h-px w-10 bg-primary" aria-hidden="true" />
           {eyebrow}
         </span>
       ) : null}
-      <h2 className="mt-3 text-2xl font-extrabold text-foreground sm:text-3xl lg:text-4xl">
-        {title}
-      </h2>
+      <h2 className="display-title mt-4 text-2xl text-foreground sm:text-4xl">{title}</h2>
       {description ? (
-        <p className="mt-3 text-base leading-relaxed text-muted-foreground">{description}</p>
+        <p className="mt-4 text-base leading-relaxed text-muted-foreground">{description}</p>
       ) : null}
     </div>
   );
