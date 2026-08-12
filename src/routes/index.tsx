@@ -241,7 +241,7 @@ function Home() {
           <SectionHeading
             centered
             eyebrow="Product Qualities"
-            title="Why Choose Our Laundry Soaps?"
+            title="Why Choose ARJ?"
             description="What customers can expect from AMARD and ADWA laundry soap."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

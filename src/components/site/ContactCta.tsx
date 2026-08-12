@@ -25,11 +25,11 @@ export function ContactCta() {
             </li>
             <li className="flex items-start gap-3">
               <Phone className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
-              <span className="flex flex-col gap-1 text-foreground">
-                <a href="tel:+251911314758" className="font-semibold hover:text-primary">
+              <span className="flex flex-col gap-1.5 text-foreground">
+                <a href="tel:+251911314758" className="font-semibold whitespace-nowrap hover:text-primary">
                   +251 911 314 758
                 </a>
-                <a href="tel:+251911235104" className="font-semibold hover:text-primary">
+                <a href="tel:+251911235104" className="font-semibold whitespace-nowrap hover:text-primary">
                   +251 911 235 104
                 </a>
               </span>
