@@ -1,3 +1,5 @@
+import { useT } from "@/lib/i18n";
+
 export function PageHero({
   eyebrow,
   title,
@@ -7,6 +9,7 @@ export function PageHero({
   title: string;
   description: string;
 }) {
+  const t = useT();
   return (
     <section className="relative overflow-hidden border-b border-border bg-secondary">
       <div className="grid-tint absolute inset-0" aria-hidden="true" />
@@ -23,7 +26,10 @@ export function PageHero({
             {description}
           </p>
           <p className="mt-6 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-muted-foreground">
-            ARJ Soap Detergent &amp; Manufacturing — Sebeta, Ethiopia
+            {t(
+              "ARJ Soap Detergent & Manufacturing — Sebeta, Ethiopia",
+              "ARJ Soap Detergent & Manufacturing — ሰበታ, ኢትዮጵያ",
+            )}
           </p>
         </div>
       </div>

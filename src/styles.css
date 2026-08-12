@@ -271,3 +271,51 @@
     linear-gradient(to bottom, oklch(0.475 0.128 152.5 / 0.06) 1px, transparent 1px);
   background-size: 44px 44px;
 }
+
+/*
+ * Amharic (Ethiopic) typography adjustments.
+ * Uppercase/wide tracking is a Latin-only device, so it is neutralised
+ * when the document language is Amharic, and line height is relaxed.
+ */
+html:lang(am) {
+  --font-display: "Archivo", "Noto Sans Ethiopic", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", "Noto Sans Ethiopic", ui-sans-serif, system-ui, sans-serif;
+}
+
+html:lang(am) body,
+html:lang(am) .display-title,
+html:lang(am) .font-display {
+  font-family: "Manrope", "Noto Sans Ethiopic", ui-sans-serif, system-ui, sans-serif;
+}
+
+html:lang(am) .uppercase {
+  text-transform: none;
+}
+
+html:lang(am) [class*="tracking-["] {
+  letter-spacing: 0.01em;
+}
+
+html:lang(am) .display-title {
+  line-height: 1.35;
+  letter-spacing: normal;
+  overflow-wrap: break-word;
+}
+
+html:lang(am) h1,
+html:lang(am) h2,
+html:lang(am) h3,
+html:lang(am) p,
+html:lang(am) li,
+html:lang(am) a,
+html:lang(am) label {
+  overflow-wrap: break-word;
+}
+
+html:lang(am) .btn-primary,
+html:lang(am) .btn-outline {
+  height: auto;
+  min-height: 2.75rem;
+  line-height: 1.4;
+  text-align: center;
+}
