@@ -166,11 +166,11 @@ const copy = {
 
 function FactoryPage() {
   const c = useCopy(copy);
-  const sections = c.sections.map((s, i) => ({ ...s, icon: sectionIcons[i] }));
+  const sections = c.sections.map((s, i) => ({ ...s, icon: sectionIcons[i] ?? sectionIcons[0]! }));
   const processSteps = c.process.steps.map((title, i) => ({
     step: String(i + 1).padStart(2, "0"),
     title,
-    icon: processIcons[i],
+    icon: processIcons[i] ?? processIcons[0]!,
   }));
 
   return (
