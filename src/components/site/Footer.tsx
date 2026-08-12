@@ -1,9 +1,39 @@
 import { Link } from "@tanstack/react-router";
 import { MapPin, Phone } from "lucide-react";
 
-import { navLinks } from "./Header";
+import { useCopy, type Lang } from "@/lib/i18n";
+
+import { useNavLinks } from "./Header";
+
+const copy = {
+  en: {
+    tagline: "Manufacturers of AMARD and ADWA Laundry Soap.",
+    established: "Established 2022 G.C. / 2014 E.C. — Sebeta, Ethiopia.",
+    quickLinks: "Quick Links",
+    ourBrands: "Our Brands",
+    amard: "AMARD Laundry Soap",
+    adwa: "ADWA Laundry Soap",
+    contact: "Contact",
+    location: "Sebeta, Ethiopia",
+    copyright: "© 2026 ARJ Soap Detergent & Manufacturing. All Rights Reserved.",
+  },
+  am: {
+    tagline: "የAMARD እና ADWA ልብስ ማጠቢያ ሳሙና አምራች።",
+    established: "የተቋቋመው በ2022 ዓ.ም (እ.ኤ.አ) / 2014 ዓ.ም — ሰበታ, ኢትዮጵያ።",
+    quickLinks: "ፈጣን አገናኞች",
+    ourBrands: "የእኛ ብራንዶች",
+    amard: "አማርድ ልብስ ማጠቢያ ሳሙና",
+    adwa: "አድዋ ልብስ ማጠቢያ ሳሙና",
+    contact: "አግኙን",
+    location: "ሰበታ, ኢትዮጵያ",
+    copyright: "© 2026 ARJ Soap Detergent & Manufacturing. ሁሉም መብቶች የተጠበቁ ናቸው።",
+  },
+} satisfies Record<Lang, Record<string, string>>;
 
 export function Footer() {
+  const c = useCopy(copy);
+  const links = useNavLinks();
+
   return (
     <footer className="border-t border-border bg-secondary">
       <div className="section-shell grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
@@ -14,20 +44,16 @@ export function Footer() {
           <h3 className="display-title mt-5 text-base text-foreground">
             ARJ Soap Detergent &amp; Manufacturing
           </h3>
-          <p className="mt-3 text-sm font-semibold text-foreground">
-            Manufacturers of AMARD and ADWA Laundry Soap.
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Established 2022 G.C. / 2014 E.C. — Sebeta, Ethiopia.
-          </p>
+          <p className="mt-3 text-sm font-semibold text-foreground">{c.tagline}</p>
+          <p className="mt-2 text-sm text-muted-foreground">{c.established}</p>
         </div>
 
         <div>
           <h4 className="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-foreground">
-            Quick Links
+            {c.quickLinks}
           </h4>
           <ul className="mt-5 grid grid-cols-2 gap-2.5 text-sm">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
@@ -42,7 +68,7 @@ export function Footer() {
 
         <div>
           <h4 className="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-foreground">
-            Our Brands
+            {c.ourBrands}
           </h4>
           <ul className="mt-5 space-y-2.5 text-sm">
             <li>
@@ -50,7 +76,7 @@ export function Footer() {
                 to="/brands"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                AMARD Laundry Soap
+                {c.amard}
               </Link>
             </li>
             <li>
@@ -58,7 +84,7 @@ export function Footer() {
                 to="/brands"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                ADWA Laundry Soap
+                {c.adwa}
               </Link>
             </li>
           </ul>
@@ -66,12 +92,12 @@ export function Footer() {
 
         <div>
           <h4 className="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-foreground">
-            Contact
+            {c.contact}
           </h4>
           <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
             <li className="flex items-start gap-2.5">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-              Sebeta, Ethiopia
+              {c.location}
             </li>
             <li className="flex items-start gap-2.5">
               <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
@@ -90,7 +116,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="section-shell py-6 text-center text-xs text-muted-foreground">
-          © 2026 ARJ Soap Detergent &amp; Manufacturing. All Rights Reserved.
+          {c.copyright}
         </div>
       </div>
     </footer>

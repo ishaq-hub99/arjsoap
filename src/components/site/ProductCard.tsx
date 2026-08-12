@@ -1,9 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 
+import { useT } from "@/lib/i18n";
+
 import type { Product } from "./products";
 
 export function ProductCard({ product }: { product: Product }) {
+  const t = useT();
   return (
     <article className="surface-card reveal flex flex-col overflow-hidden">
       <div className="relative grid-tint bg-secondary p-8">
@@ -35,11 +38,14 @@ export function ProductCard({ product }: { product: Product }) {
         </ul>
         <div className="mt-auto pt-7">
           <Link to="/brands" hash={product.slug} className="btn-primary w-full">
-            View Product
+            {t("View Product", "ምርቱን ይመልከቱ")}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
           <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-            Manufactured by ARJ Soap Detergent &amp; Manufacturing — Sebeta, Ethiopia
+            {t(
+              "Manufactured by ARJ Soap Detergent & Manufacturing — Sebeta, Ethiopia",
+              "በARJ Soap Detergent & Manufacturing የተመረተ — ሰበታ, ኢትዮጵያ",
+            )}
           </p>
         </div>
       </div>
