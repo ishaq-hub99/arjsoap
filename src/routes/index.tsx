@@ -55,7 +55,7 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-secondary">
         <div className="grid-tint absolute inset-0" aria-hidden="true" />
-        <div className="section-shell relative grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-28">
+        <div className="section-shell relative grid gap-14 py-16 sm:py-24 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:py-28">
           <div className="rise-in">
             <span className="hairline-label">
               <span className="h-px w-10 bg-primary" aria-hidden="true" />
@@ -77,31 +77,55 @@ function Home() {
                 Contact Us
               </Link>
             </div>
-            <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-border pt-7">
-              <span className="text-[0.7rem] font-extrabold uppercase tracking-[0.22em] text-muted-foreground">
-                Our brands
-              </span>
-              <span className="font-display text-lg font-extrabold uppercase tracking-tight text-foreground">
-                AMARD
-              </span>
-              <span className="h-4 w-px bg-border" aria-hidden="true" />
-              <span className="font-display text-lg font-extrabold uppercase tracking-tight text-foreground">
-                ADWA
-              </span>
+
+            {/* ARJ -> AMARD + ADWA relationship */}
+            <div className="mt-12 rounded-2xl border border-border bg-background/70 p-6 shadow-card">
+              <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-primary">
+                One manufacturer, two brands
+              </p>
+              <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <span className="display-title text-lg text-foreground">ARJ</span>
+                <span className="hidden h-px flex-1 bg-border sm:block" aria-hidden="true" />
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="rounded-md bg-primary px-3.5 py-2 font-display text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
+                    AMARD
+                  </span>
+                  <span className="text-muted-foreground" aria-hidden="true">
+                    +
+                  </span>
+                  <span className="rounded-md bg-primary px-3.5 py-2 font-display text-sm font-extrabold uppercase tracking-tight text-primary-foreground">
+                    ADWA
+                  </span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Both laundry soap brands are manufactured by ARJ Soap Detergent &amp; Manufacturing in
+                Sebeta, Ethiopia.
+              </p>
             </div>
           </div>
 
           <div className="relative rise-in">
-            <div className="photo-frame bg-background p-8 sm:p-12">
-              <img
-                src={amardImage}
-                alt="AMARD Laundry Soap bar in green ARJ packaging"
-                width={640}
-                height={640}
-                className="mx-auto h-72 w-full object-contain sm:h-[26rem]"
-              />
+            <div className="grid gap-5 sm:grid-cols-2">
+              {brandCards.map((card) => (
+                <div key={card.brand} className="photo-frame bg-background p-6 sm:p-7">
+                  <img
+                    src={card.image}
+                    alt={card.alt}
+                    width={640}
+                    height={640}
+                    className="mx-auto h-56 w-full object-contain sm:h-72"
+                  />
+                  <p className="mt-5 text-center font-display text-xl font-extrabold uppercase tracking-tight text-primary">
+                    {card.brand}
+                  </p>
+                  <p className="mt-1 text-center text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                    Laundry Soap
+                  </p>
+                </div>
+              ))}
             </div>
-            <div className="absolute -bottom-6 left-6 right-6 rounded-xl border border-border bg-background px-5 py-4 shadow-card sm:left-10 sm:right-auto sm:max-w-xs">
+            <div className="mt-6 rounded-xl border border-border bg-background px-5 py-4 shadow-card">
               <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.2em] text-primary">
                 Manufactured by
               </p>
@@ -217,7 +241,7 @@ function Home() {
           <SectionHeading
             centered
             eyebrow="Product Qualities"
-            title="Why Choose Our Laundry Soaps?"
+            title="Why Choose ARJ?"
             description="What customers can expect from AMARD and ADWA laundry soap."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

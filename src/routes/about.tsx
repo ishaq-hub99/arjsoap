@@ -66,12 +66,11 @@ function About() {
             <SectionHeading
               eyebrow="Company Story"
               title="Manufacturing Quality Since 2022"
-              description="Established in 2022 G.C. (2014 E.C.), ARJ Soap Detergent & Manufacturing is a soap manufacturing company based in Sebeta, Ethiopia. The company produces two solid laundry soap brands, AMARD and ADWA."
+              description="ARJ Soap Detergent & Manufacturing was established in 2022 G.C. / 2014 E.C. in Sebeta, Ethiopia. The company manufactures solid laundry soap using modern machinery imported from China, with production, packaging and product storage handled at its facility."
             />
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Manufacturing is supported by modern machinery imported from China, and the company is
-              qualified and approved by the Ethiopian government with the certifications required for
-              soap manufacturing.
+              ARJ produces two solid laundry soap brands, AMARD and ADWA, both made at its facility in
+              Sebeta.
             </p>
             <Link to="/factory" className="btn-primary mt-9">
               Explore Our Factory
