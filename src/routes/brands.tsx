@@ -172,10 +172,11 @@ function Brands() {
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { src: photos.adwaVictoryGrater, alt: c.gallery.photos[0].alt },
-              { src: photos.adwaSunkissed, alt: c.gallery.photos[1].alt },
-              { src: photos.adwaVictoryTowels, alt: c.gallery.photos[2].alt },
-              { src: photos.adwaLaundryLine, alt: c.gallery.photos[3].alt },
+              { src: photos.adwaVictoryGrater, alt: c.gallery.photos[0]?.alt ?? "" },
+              { src: photos.adwaSunkissed, alt: c.gallery.photos[1]?.alt ?? "" },
+              { src: photos.adwaVictoryTowels, alt: c.gallery.photos[2]?.alt ?? "" },
+              { src: photos.adwaLaundryLine, alt: c.gallery.photos[3]?.alt ?? "" },
+
             ].map((photo) => (
               <div key={photo.src} className="photo-frame reveal bg-background">
                 <img
