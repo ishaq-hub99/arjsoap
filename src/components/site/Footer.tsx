@@ -18,15 +18,15 @@ const copy = {
     copyright: "© 2026 ARJ Soap Detergent & Manufacturing. All Rights Reserved.",
   },
   am: {
-    tagline: "የAMARD እና ADWA ልብስ ማጠቢያ ሳሙና አምራች።",
-    established: "የተቋቋመው በ2022 ዓ.ም (እ.ኤ.አ) / 2014 ዓ.ም — ሰበታ, ኢትዮጵያ።",
+    tagline: "የአማርድ እና አድዋ የልብስ ሳሙና አምራች።",
+    established: "የተመሰረተው በ2022 እ.ኤ.አ (2014 ዓ.ም) — ሰበታ፣ ኢትዮጵያ።",
     quickLinks: "ፈጣን አገናኞች",
-    ourBrands: "የእኛ ብራንዶች",
-    amard: "አማርድ ልብስ ማጠቢያ ሳሙና",
-    adwa: "አድዋ ልብስ ማጠቢያ ሳሙና",
+    ourBrands: "ብራንዶቻችን",
+    amard: "አማርድ የልብስ ሳሙና",
+    adwa: "አድዋ የልብስ ሳሙና",
     contact: "አግኙን",
-    location: "ሰበታ, ኢትዮጵያ",
-    copyright: "© 2026 ARJ Soap Detergent & Manufacturing. ሁሉም መብቶች የተጠበቁ ናቸው።",
+    location: "ሰበታ፣ ኢትዮጵያ",
+    copyright: "© 2026 ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ። መብቱ በህግ የተጠበቀ ነው።",
   },
 } satisfies Record<Lang, Record<string, string>>;
 
