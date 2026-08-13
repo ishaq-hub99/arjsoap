@@ -7,7 +7,7 @@ import { useLang } from "@/lib/i18n";
 export const navLinks = [
   { to: "/", label: "Home", labelAm: "መነሻ" },
   { to: "/about", label: "About", labelAm: "ስለ እኛ" },
-  { to: "/brands", label: "Our Brands", labelAm: "የእኛ ብራንዶች" },
+  { to: "/brands", label: "Our Brands", labelAm: "ብራንዶቻችን" },
   { to: "/products", label: "Products", labelAm: "ምርቶች" },
   { to: "/factory", label: "Our Factory", labelAm: "ፋብሪካችን" },
   { to: "/quality", label: "Quality", labelAm: "ጥራት" },
@@ -60,7 +60,7 @@ export function Header() {
         <div className="section-shell flex items-center justify-between py-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-light">
           <span>
             {isAm
-              ? "የAMARD እና ADWA ልብስ ማጠቢያ ሳሙና አምራች — ሰበታ, ኢትዮጵያ"
+              ? "የአማርድ እና አድዋ የልብስ ሳሙና አምራች — ሰበታ፣ ኢትዮጵያ"
               : "Manufacturers of AMARD & ADWA Laundry Soap — Sebeta, Ethiopia"}
           </span>
           <a href="tel:+251911314758" className="transition-opacity hover:opacity-80">
