@@ -3,8 +3,9 @@ import { ArrowRight, Building2, Check, Factory, PackageCheck, ShieldCheck } from
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { SectionHeading } from "@/components/site/PageHero";
-import { adwaImage, amardImage, products, whyChooseArj } from "@/components/site/products";
+import { adwaImage, amardImage, useProducts, useWhyChooseArj } from "@/components/site/products";
 import { photos } from "@/components/site/photos";
+import { LocalizedHead, useCopy, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,30 +29,199 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const brandCards = [
+const copy = {
+  en: {
+    heroBadge: "Manufacturing in Sebeta, Ethiopia since 2022",
+    heroTitle: "Quality Laundry Soap, Made in Ethiopia",
+    heroDescription:
+      "ARJ Soap Detergent & Manufacturing produces quality solid laundry soaps through its trusted brands, AMARD and ADWA.",
+    exploreProducts: "Explore Our Products",
+    contactUs: "Contact Us",
+    relationshipLabel: "One manufacturer, two brands",
+    relationshipBody:
+      "Both laundry soap brands are manufactured by ARJ Soap Detergent & Manufacturing in Sebeta, Ethiopia.",
+    laundrySoap: "Laundry Soap",
+    manufacturedBy: "Manufactured by",
+    manufacturerName: "ARJ Soap Detergent & Manufacturing",
+    brands: {
+      eyebrow: "Our Brands",
+      title: "Our Brands",
+      description: "Two laundry soap brands, manufactured by ARJ.",
+    },
+    manufacturedByArj: "Manufactured by ARJ",
+    viewBrand: "View Brand",
+    intro: {
+      eyebrow: "Company Introduction",
+      title: "Manufacturing Quality Since 2022",
+      description:
+        "Established in 2022 G.C. (2014 E.C.), ARJ Soap Detergent & Manufacturing is a soap manufacturing company based in Sebeta, Ethiopia. The company produces two solid laundry soap brands, AMARD and ADWA.",
+    },
+    introItems: [
+      { icon: Building2, title: "Established", body: "2022 G.C. / 2014 E.C." },
+      { icon: Factory, title: "Facility", body: "Sebeta, Ethiopia" },
+      { icon: PackageCheck, title: "Brands", body: "AMARD and ADWA laundry soap" },
+      {
+        icon: ShieldCheck,
+        title: "Approved",
+        body: "Qualified and approved by the Ethiopian government",
+      },
+    ],
+    learnMore: "Learn More About ARJ",
+    introPhotoAlt: "Stacks of wrapped AMARD laundry soap bars at the ARJ facility in Sebeta",
+    why: {
+      eyebrow: "Product Qualities",
+      title: "Why Choose ARJ?",
+      description: "What customers can expect from AMARD and ADWA laundry soap.",
+    },
+    factory: {
+      eyebrow: "Our Factory",
+      title: "Our Manufacturing Facility",
+      description:
+        "Based in Sebeta, Ethiopia, ARJ operates a dedicated manufacturing facility equipped with modern machinery imported from China.",
+    },
+    factoryPhotoAlt: "Pallets of ADWA laundry soap cartons stored at the ARJ manufacturing facility",
+    factoryBody:
+      "Our products are manufactured, packaged, stored and distributed from our facility, with distribution also reaching Merkato.",
+    exploreFactory: "Explore Our Factory",
+    visionLabel: "Our Vision",
+    visionQuote: "\u201cTo be the No. 1 soap brand in Africa.\u201d",
+    productsStrip: {
+      eyebrow: "Our Products",
+      title: "Two solid laundry soap brands",
+      description: "Both brands are manufactured at the ARJ facility in Sebeta, Ethiopia.",
+    },
+    seeProductDetails: "See full product details and features",
+    productsLink: "Products",
+    qualityStandards: "Quality & standards at ARJ",
+    qualityLink: "Quality",
+    headTitle: "ARJ Soap Detergent & Manufacturing | AMARD & ADWA Laundry Soap",
+    headDescription:
+      "ARJ Soap Detergent & Manufacturing in Sebeta, Ethiopia produces quality solid laundry soaps through its brands AMARD and ADWA.",
+  },
+  am: {
+    heroBadge: "ከ2022 ዓ.ም ጀምሮ በሰበታ፣ ኢትዮጵያ የምናመርት",
+    heroTitle: "ጥራት ያለው የልብስ ማጠቢያ ሳሙና፣ በኢትዮጵያ የተመረተ",
+    heroDescription:
+      "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በታመኑ ብራንዶቹ አማርድ እና አድዋ ጥራት ያለው ጠንካራ የልብስ ማጠቢያ ሳሙና ያመርታል።",
+    exploreProducts: "ምርቶቻችንን ይመልከቱ",
+    contactUs: "ያግኙን",
+    relationshipLabel: "አንድ አምራች፣ ሁለት ብራንዶች",
+    relationshipBody:
+      "ሁለቱም የልብስ ማጠቢያ ሳሙና ብራንዶች የሚመረቱት በኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ ነው።",
+    laundrySoap: "ልብስ ማጠቢያ ሳሙና",
+    manufacturedBy: "አምራች",
+    manufacturerName: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ",
+    brands: {
+      eyebrow: "ብራንዶቻችን",
+      title: "ብራንዶቻችን",
+      description: "በኤ.አር.ጄ የሚመረቱ ሁለት የልብስ ማጠቢያ ሳሙና ብራንዶች።",
+    },
+    manufacturedByArj: "በኤ.አር.ጄ የተመረተ",
+    viewBrand: "ብራንዱን ይመልከቱ",
+    intro: {
+      eyebrow: "ስለ ድርጅቱ",
+      title: "ከ2022 ዓ.ም ጀምሮ ጥራትን ስናመርት",
+      description:
+        "በ2022 እ.ኤ.አ. (2014 ዓ.ም) የተመሠረተው ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ የሚገኝ የሳሙና አምራች ድርጅት ነው። ድርጅቱ ሁለት ጠንካራ የልብስ ማጠቢያ ሳሙና ብራንዶችን ያመርታል፣ አማርድ እና አድዋ።",
+    },
+    introItems: [
+      { icon: Building2, title: "የተመሠረተበት", body: "2022 እ.ኤ.አ. / 2014 ዓ.ም" },
+      { icon: Factory, title: "ፋብሪካ", body: "ሰበታ፣ ኢትዮጵያ" },
+      { icon: PackageCheck, title: "ብራንዶች", body: "አማርድ እና አድዋ ልብስ ማጠቢያ ሳሙና" },
+      {
+        icon: ShieldCheck,
+        title: "የተረጋገጠ",
+        body: "በኢትዮጵያ መንግስት ብቁ ሆኖ የተረጋገጠ",
+      },
+    ],
+    learnMore: "ስለ ኤ.አር.ጄ የበለጠ ይወቁ",
+    introPhotoAlt: "የታሸጉ የአማርድ ልብስ ማጠቢያ ሳሙና ብሎኮች ክምር በኤ.አር.ጄ ፋብሪካ ውስጥ",
+    why: {
+      eyebrow: "የምርት ባህሪያት",
+      title: "ለምን ኤ.አር.ጄን ይመርጣሉ?",
+      description: "ደንበኞች ከአማርድ እና ከአድዋ ልብስ ማጠቢያ ሳሙና ምን ሊጠብቁ ይችላሉ።",
+    },
+    factory: {
+      eyebrow: "ፋብሪካችን",
+      title: "የማምረቻ ፋብሪካችን",
+      description:
+        "በሰበታ፣ ኢትዮጵያ የሚገኘው ኤ.አር.ጄ ከቻይና በገባ ዘመናዊ ማሽነሪ የተገጠመ የራሱ ማምረቻ ፋብሪካ ያንቀሳቅሳል።",
+    },
+    factoryPhotoAlt: "የአድዋ ልብስ ማጠቢያ ሳሙና ካርቶኖች ፓሌቶች በኤ.አር.ጄ ማምረቻ ፋብሪካ ውስጥ የተከማቹ",
+    factoryBody:
+      "ምርቶቻችን ከፋብሪካችን ይመረታሉ፣ ይታሸጋሉ፣ ይከማቻሉ እና ይሰራጫሉ፣ ስርጭትም እስከ መርካቶ ይደርሳል።",
+    exploreFactory: "ፋብሪካችንን ይመልከቱ",
+    visionLabel: "ራዕያችን",
+    visionQuote: "«በአፍሪካ ቁጥር አንድ የሳሙና ብራንድ መሆን።»",
+    productsStrip: {
+      eyebrow: "ምርቶቻችን",
+      title: "ሁለት ጠንካራ የልብስ ማጠቢያ ሳሙና ብራንዶች",
+      description: "ሁለቱም ብራንዶች የሚመረቱት በኤ.አር.ጄ ፋብሪካ በሰበታ፣ ኢትዮጵያ ነው።",
+    },
+    seeProductDetails: "ሙሉ የምርት ዝርዝርና ባህሪያት ይመልከቱ",
+    productsLink: "ምርቶች",
+    qualityStandards: "የኤ.አር.ጄ ጥራት እና ደረጃዎች",
+    qualityLink: "ጥራት",
+    headTitle: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ | አማርድ እና አድዋ ልብስ ማጠቢያ ሳሙና",
+    headDescription:
+      "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ ጥራት ያለው ጠንካራ የልብስ ማጠቢያ ሳሙና በአማርድ እና በአድዋ ብራንዶቹ ያመርታል።",
+  },
+} satisfies Record<Lang, unknown>;
+
+const brandCardsBase = [
   {
     brand: "AMARD",
     image: amardImage,
-    alt: "AMARD Laundry Soap bar in green ARJ packaging",
-    features: [
+    altEn: "AMARD Laundry Soap bar in green ARJ packaging",
+    altAm: "የአማርድ ልብስ ማጠቢያ ሳሙና ብሎክ በአረንጓዴ የኤ.አር.ጄ መጠቅለያ ውስጥ",
+    featuresEn: [
       "Long-lasting",
       "Extra foaming",
       "Powerful cleaning",
       "Soft on hands while washing",
       "Made from 100% vegetable oil according to the product packaging",
     ],
+    featuresAm: [
+      "ረጅም ጊዜ የሚያገለግል",
+      "ተጨማሪ አረፋ ማውጣት",
+      "ኃይለኛ ማጽዳት",
+      "በሚያጥቡበት ጊዜ ለእጅ ገር የሆነ",
+      "እንደ ምርቱ መጠቅለያ መረጃ ከ100% የአትክልት ዘይት የተሠራ",
+    ],
   },
   {
     brand: "ADWA",
     image: adwaImage,
-    alt: "ADWA Laundry Soap bar in green ARJ packaging",
-    features: ["Long-lasting", "Extra foaming", "Effective cleaning", "New washing formula"],
+    altEn: "ADWA Laundry Soap bar in green ARJ packaging",
+    altAm: "የአድዋ ልብስ ማጠቢያ ሳሙና ብሎክ በአረንጓዴ የኤ.አር.ጄ መጠቅለያ ውስጥ",
+    featuresEn: ["Long-lasting", "Extra foaming", "Effective cleaning", "New washing formula"],
+    featuresAm: ["ረጅም ጊዜ የሚያገለግል", "ተጨማሪ አረፋ ማውጣት", "ውጤታማ ማጽዳት", "አዲስ የማጠቢያ ቀመር"],
   },
 ];
 
+function useBrandCards() {
+  const c = useCopy(copy);
+  const isAm = c === copy.am;
+  return brandCardsBase.map((card) => ({
+    brand: card.brand,
+    image: card.image,
+    alt: isAm ? card.altAm : card.altEn,
+    features: isAm ? card.featuresAm : card.featuresEn,
+  }));
+}
+
 function Home() {
+  const c = useCopy(copy);
+  const products = useProducts();
+  const whyChooseArj = useWhyChooseArj();
+  const brandCards = useBrandCards();
+
   return (
     <>
+      <LocalizedHead
+        title={{ en: copy.en.headTitle, am: copy.am.headTitle }}
+        description={{ en: copy.en.headDescription, am: copy.am.headDescription }}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-secondary">
         <div className="grid-tint absolute inset-0" aria-hidden="true" />
@@ -59,29 +229,28 @@ function Home() {
           <div className="rise-in">
             <span className="hairline-label">
               <span className="h-px w-10 bg-primary" aria-hidden="true" />
-              Manufacturing in Sebeta, Ethiopia since 2022
+              {c.heroBadge}
             </span>
             <h1 className="display-title mt-6 text-[2.1rem] text-foreground sm:text-6xl lg:text-[4.25rem]">
-              Quality Laundry Soap, Made in Ethiopia
+              {c.heroTitle}
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              ARJ Soap Detergent &amp; Manufacturing produces quality solid laundry soaps through its
-              trusted brands, AMARD and ADWA.
+              {c.heroDescription}
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link to="/products" className="btn-primary">
-                Explore Our Products
+                {c.exploreProducts}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link to="/contact" className="btn-outline">
-                Contact Us
+                {c.contactUs}
               </Link>
             </div>
 
             {/* ARJ -> AMARD + ADWA relationship */}
             <div className="mt-12 rounded-2xl border border-border bg-background/70 p-6 shadow-card">
               <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-primary">
-                One manufacturer, two brands
+                {c.relationshipLabel}
               </p>
               <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <span className="display-title text-lg text-foreground">ARJ</span>
@@ -98,10 +267,7 @@ function Home() {
                   </span>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Both laundry soap brands are manufactured by ARJ Soap Detergent &amp; Manufacturing in
-                Sebeta, Ethiopia.
-              </p>
+              <p className="mt-4 text-sm text-muted-foreground">{c.relationshipBody}</p>
             </div>
           </div>
 
@@ -120,18 +286,16 @@ function Home() {
                     {card.brand}
                   </p>
                   <p className="mt-1 text-center text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                    Laundry Soap
+                    {c.laundrySoap}
                   </p>
                 </div>
               ))}
             </div>
             <div className="mt-6 rounded-xl border border-border bg-background px-5 py-4 shadow-card">
               <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.2em] text-primary">
-                Manufactured by
+                {c.manufacturedBy}
               </p>
-              <p className="mt-1 text-sm font-bold text-foreground">
-                ARJ Soap Detergent &amp; Manufacturing
-              </p>
+              <p className="mt-1 text-sm font-bold text-foreground">{c.manufacturerName}</p>
             </div>
           </div>
         </div>
@@ -142,9 +306,9 @@ function Home() {
         <div className="section-shell">
           <SectionHeading
             centered
-            eyebrow="Our Brands"
-            title="Our Brands"
-            description="Two laundry soap brands, manufactured by ARJ."
+            eyebrow={c.brands.eyebrow}
+            title={c.brands.title}
+            description={c.brands.description}
           />
           <div className="mt-14 grid gap-8 lg:grid-cols-2">
             {brandCards.map((card) => (
@@ -162,7 +326,7 @@ function Home() {
                 <div className="p-8">
                   <h3 className="display-title text-3xl text-primary sm:text-4xl">{card.brand}</h3>
                   <p className="mt-1 text-sm font-bold uppercase tracking-[0.18em] text-muted-foreground">
-                    Laundry Soap
+                    {c.laundrySoap}
                   </p>
                   <ul className="mt-6 grid gap-2.5 border-t border-border pt-6 sm:grid-cols-2">
                     {card.features.map((f) => (
@@ -174,10 +338,10 @@ function Home() {
                   </ul>
                   <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
                     <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-                      Manufactured by ARJ
+                      {c.manufacturedByArj}
                     </p>
                     <Link to="/brands" className="btn-outline px-5 py-2.5">
-                      View Brand
+                      {c.viewBrand}
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
                   </div>
@@ -193,21 +357,12 @@ function Home() {
         <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="reveal">
             <SectionHeading
-              eyebrow="Company Introduction"
-              title="Manufacturing Quality Since 2022"
-              description="Established in 2022 G.C. (2014 E.C.), ARJ Soap Detergent & Manufacturing is a soap manufacturing company based in Sebeta, Ethiopia. The company produces two solid laundry soap brands, AMARD and ADWA."
+              eyebrow={c.intro.eyebrow}
+              title={c.intro.title}
+              description={c.intro.description}
             />
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {[
-                { icon: Building2, title: "Established", body: "2022 G.C. / 2014 E.C." },
-                { icon: Factory, title: "Facility", body: "Sebeta, Ethiopia" },
-                { icon: PackageCheck, title: "Brands", body: "AMARD and ADWA laundry soap" },
-                {
-                  icon: ShieldCheck,
-                  title: "Approved",
-                  body: "Qualified and approved by the Ethiopian government",
-                },
-              ].map((item) => (
+              {c.introItems.map((item) => (
                 <div key={item.title} className="surface-card p-5">
                   <item.icon className="h-6 w-6 text-primary" aria-hidden="true" />
                   <h3 className="mt-3 text-[0.7rem] font-extrabold uppercase tracking-[0.18em] text-foreground">
@@ -218,14 +373,14 @@ function Home() {
               ))}
             </div>
             <Link to="/about" className="btn-primary mt-9">
-              Learn More About ARJ
+              {c.learnMore}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
           <div className="photo-frame reveal bg-background">
             <img
               src={photos.amardBarsStacked}
-              alt="Stacks of wrapped AMARD laundry soap bars at the ARJ facility in Sebeta"
+              alt={c.introPhotoAlt}
               loading="lazy"
               width={1200}
               height={1400}
@@ -240,9 +395,9 @@ function Home() {
         <div className="section-shell">
           <SectionHeading
             centered
-            eyebrow="Product Qualities"
-            title="Why Choose ARJ?"
-            description="What customers can expect from AMARD and ADWA laundry soap."
+            eyebrow={c.why.eyebrow}
+            title={c.why.title}
+            description={c.why.description}
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {whyChooseArj.map((item, i) => (
@@ -264,7 +419,7 @@ function Home() {
           <div className="photo-frame reveal bg-background">
             <img
               src={photos.adwaCartonsWarehouse}
-              alt="Pallets of ADWA laundry soap cartons stored at the ARJ manufacturing facility"
+              alt={c.factoryPhotoAlt}
               loading="lazy"
               width={1408}
               height={912}
@@ -273,16 +428,13 @@ function Home() {
           </div>
           <div className="reveal">
             <SectionHeading
-              eyebrow="Our Factory"
-              title="Our Manufacturing Facility"
-              description="Based in Sebeta, Ethiopia, ARJ operates a dedicated manufacturing facility equipped with modern machinery imported from China."
+              eyebrow={c.factory.eyebrow}
+              title={c.factory.title}
+              description={c.factory.description}
             />
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Our products are manufactured, packaged, stored and distributed from our facility, with
-              distribution also reaching Merkato.
-            </p>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">{c.factoryBody}</p>
             <Link to="/factory" className="btn-primary mt-9">
-              Explore Our Factory
+              {c.exploreFactory}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
@@ -296,13 +448,13 @@ function Home() {
             <div className="grid-tint absolute inset-0 opacity-40" aria-hidden="true" />
             <div className="relative">
               <span className="text-[0.7rem] font-extrabold uppercase tracking-[0.28em] text-primary-light">
-                Our Vision
+                {c.visionLabel}
               </span>
               <p className="mx-auto mt-8 max-w-4xl font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
-                &ldquo;To be the No. 1 soap brand in Africa.&rdquo;
+                {c.visionQuote}
               </p>
               <p className="mt-8 text-[0.7rem] font-bold uppercase tracking-[0.22em] text-primary-light">
-                ARJ Soap Detergent &amp; Manufacturing
+                {c.manufacturerName}
               </p>
             </div>
           </div>
@@ -314,9 +466,9 @@ function Home() {
         <div className="section-shell">
           <SectionHeading
             centered
-            eyebrow="Our Products"
-            title="Two solid laundry soap brands"
-            description="Both brands are manufactured at the ARJ facility in Sebeta, Ethiopia."
+            eyebrow={c.productsStrip.eyebrow}
+            title={c.productsStrip.title}
+            description={c.productsStrip.description}
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((product) => (
@@ -343,22 +495,18 @@ function Home() {
             ))}
             <div className="surface-card reveal grid place-items-center p-6 text-center">
               <div>
-                <p className="text-sm font-semibold text-foreground">
-                  See full product details and features
-                </p>
+                <p className="text-sm font-semibold text-foreground">{c.seeProductDetails}</p>
                 <Link to="/products" className="btn-outline mt-5 px-5 py-2.5">
-                  Products
+                  {c.productsLink}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
             </div>
             <div className="surface-card reveal grid place-items-center p-6 text-center">
               <div>
-                <p className="text-sm font-semibold text-foreground">
-                  Quality &amp; standards at ARJ
-                </p>
+                <p className="text-sm font-semibold text-foreground">{c.qualityStandards}</p>
                 <Link to="/quality" className="btn-outline mt-5 px-5 py-2.5">
-                  Quality
+                  {c.qualityLink}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </div>
