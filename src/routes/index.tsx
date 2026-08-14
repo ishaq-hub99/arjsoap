@@ -3,7 +3,7 @@ import { ArrowRight, Building2, Check, Factory, PackageCheck, ShieldCheck } from
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { SectionHeading } from "@/components/site/PageHero";
-import { adwaImage, amardImage, useProducts, useWhyChooseArj } from "@/components/site/products";
+import { adwaImage, amardImage, useProducts } from "@/components/site/products";
 import { photos } from "@/components/site/photos";
 import { LocalizedHead, useCopy, type Lang } from "@/lib/i18n";
 
@@ -267,7 +267,6 @@ function useBrandCards() {
 function Home() {
   const c = useCopy(copy);
   const products = useProducts();
-  const whyChooseArj = useWhyChooseArj();
   const brandCards = useBrandCards();
 
   return (
