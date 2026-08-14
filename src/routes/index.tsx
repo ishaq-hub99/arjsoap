@@ -448,18 +448,18 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <section className="py-20 sm:py-28">
+      {/* WHY ARJ */}
+      <section className="py-16 sm:py-24 lg:py-28">
         <div className="section-shell">
           <SectionHeading
             centered
-            eyebrow={c.why.eyebrow}
-            title={c.why.title}
-            description={c.why.description}
+            eyebrow={c.whyArj.eyebrow}
+            title={c.whyArj.title}
+            description={c.whyArj.description}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {whyChooseArj.map((item, i) => (
-              <div key={item.title} className="surface-card reveal p-7">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-4">
+            {c.whyArj.items.map((item, i) => (
+              <div key={item.title} className="surface-card reveal p-6 sm:p-7">
                 <span className="font-display text-sm font-extrabold text-primary">
                   0{i + 1}
                 </span>
@@ -470,6 +470,7 @@ function Home() {
           </div>
         </div>
       </section>
+
 
       {/* FACTORY */}
       <section className="border-y border-border bg-secondary py-20 sm:py-28">
