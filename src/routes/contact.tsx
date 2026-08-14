@@ -29,6 +29,8 @@ export const Route = createFileRoute("/contact")({
 
 type FieldErrors = Partial<Record<"name" | "phone" | "email" | "message", string>>;
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/moealbog";
+
 const phones = [
   { display: "+251 911 314 758", href: "tel:+251911314758" },
   { display: "+251 911 235 104", href: "tel:+251911235104" },
@@ -64,8 +66,11 @@ const copy = {
         message: { label: "Message", placeholder: "How can we help you?" },
       },
       submit: "Send Message",
+      submitting: "Sending...",
       success:
-        "Thank you — your message has been recorded. Please also call us on the numbers listed if your enquiry is urgent.",
+        "Thank you — your message has been sent. Please also call us on the numbers listed if your enquiry is urgent.",
+      failure:
+        "Sorry, your message could not be sent. Please try again or call us on the numbers listed.",
       errors: {
         nameMin: "Please enter your full name",
         nameMax: "Name is too long",
@@ -114,8 +119,11 @@ const copy = {
         message: { label: "መልዕክት", placeholder: "እንዴት ልንረዳዎት እንችላለን?" },
       },
       submit: "መልዕክት ላክ",
+      submitting: "በመላክ ላይ...",
       success:
         "እናመሰግናለን! መልዕክትዎ ደርሶናል። ጉዳዩ አስቸኳይ ከሆነ እባክዎ ከላይ በተጠቀሱት ስልክ ቁጥሮች ደውለው ያነጋግሩን።",
+      failure:
+        "ይቅርታ፣ መልዕክትዎ አልተላከም። እባክዎ እንደገና ይሞክሩ ወይም ከላይ በተጠቀሱት ስልክ ቁጥሮች ደውለው ያነጋግሩን።",
       errors: {
         nameMin: "እባክዎ ሙሉ ስምዎን ያስገቡ",
         nameMax: "ስሙ በጣም ረዥም ነው",
@@ -140,7 +148,7 @@ const copy = {
 function Contact() {
   const c = useCopy(copy);
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const contactSchema = z.object({
     name: z.string().trim().min(2, c.form.errors.nameMin).max(100, c.form.errors.nameMax),
@@ -149,9 +157,10 @@ function Contact() {
     message: z.string().trim().min(10, c.form.errors.messageMin).max(1000, c.form.errors.messageMax),
   });
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formEl = event.currentTarget;
+    const form = new FormData(formEl);
     const result = contactSchema.safeParse({
       name: String(form.get("name") ?? ""),
       phone: String(form.get("phone") ?? ""),
@@ -166,13 +175,33 @@ function Contact() {
         if (!fieldErrors[key]) fieldErrors[key] = issue.message;
       }
       setErrors(fieldErrors);
-      setSubmitted(false);
+      setStatus("idle");
       return;
     }
 
     setErrors({});
-    setSubmitted(true);
-    event.currentTarget.reset();
+    setStatus("sending");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new URLSearchParams({
+          name: result.data.name,
+          phone: result.data.phone,
+          email: result.data.email,
+          subject: `Website enquiry from ${result.data.name}`,
+          message: result.data.message,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Formspree submission failed");
+
+      setStatus("success");
+      formEl.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   const fields = [
@@ -276,12 +305,27 @@ function Contact() {
                   <p className="mt-1.5 text-xs font-semibold text-destructive">{errors.message}</p>
                 ) : null}
               </div>
-              <button type="submit" className="btn-primary w-full">
-                {c.form.submit}
+              <button
+                type="submit"
+                className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? c.form.submitting : c.form.submit}
               </button>
-              {submitted ? (
-                <p className="rounded-md bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground">
+              {status === "success" ? (
+                <p
+                  role="status"
+                  className="rounded-md bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground"
+                >
                   {c.form.success}
+                </p>
+              ) : null}
+              {status === "error" ? (
+                <p
+                  role="alert"
+                  className="rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm font-semibold text-destructive"
+                >
+                  {c.form.failure}
                 </p>
               ) : null}
             </form>
