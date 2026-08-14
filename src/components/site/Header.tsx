@@ -93,15 +93,15 @@ export function Header() {
                 activeOptions={{ exact: link.to === "/" }}
                 activeProps={{ className: "text-primary bg-accent" }}
                 inactiveProps={{ className: "text-muted-foreground" }}
-                className="rounded-md px-3 py-2 text-[0.8rem] font-bold uppercase tracking-[0.06em] transition-colors hover:text-primary"
+                className="whitespace-nowrap rounded-md px-2.5 py-2 text-[0.78rem] font-bold uppercase tracking-[0.04em] transition-colors hover:text-primary xl:px-3 xl:text-[0.8rem]"
               >
                 {isAm ? link.labelAm : link.label}
               </Link>
             ))}
             <LanguageSwitch className="ml-3" />
-            <Link to="/contact" className="btn-primary ml-3 px-5 py-2.5">
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              {isAm ? "አግኙን" : "Contact Us"}
+            <Link to="/contact" className="btn-primary ml-3 whitespace-nowrap px-4 py-2.5 xl:px-5">
+              <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {isAm ? "አግኙን" : "Contact ARJ"}
             </Link>
           </nav>
 

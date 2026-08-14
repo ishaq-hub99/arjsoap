@@ -37,7 +37,7 @@ const copy = {
       eyebrow: "Our Factory",
       title: "Our Manufacturing Facility",
       description:
-        "Based in Sebeta, Ethiopia, ARJ operates a dedicated manufacturing facility equipped with modern machinery imported from China.",
+        "ARJ Soap, Detergent & Manufacturing operates a dedicated soap and detergent manufacturing facility in Sebeta, Ethiopia, equipped with modern machinery imported from China and focused on consistent production and quality.",
     },
     packagingAlt: "ADWA branded wrapping film feeding through the packaging machine at the ARJ facility",
     sections: [
@@ -185,7 +185,7 @@ function FactoryPage() {
         description={c.hero.description}
       />
 
-      <section className="py-20 sm:py-28">
+      <section className="py-16 sm:py-24 lg:py-28">
         <div className="section-shell">
           <div className="photo-frame reveal bg-background">
             <img
@@ -197,9 +197,9 @@ function FactoryPage() {
               className="w-full object-cover"
             />
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-3">
             {sections.map((item) => (
-              <div key={item.title} className="surface-card reveal p-7">
+              <div key={item.title} className="surface-card reveal p-6 sm:p-7">
                 <item.icon className="h-7 w-7 text-primary" aria-hidden="true" />
                 <h3 className="display-title mt-5 text-lg text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
@@ -290,7 +290,7 @@ function FactoryPage() {
             title={c.gallery.title}
             description={c.gallery.description}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-3">
             {factoryGallery.map((photo, i) => (
               <div key={photo.src} className="photo-frame reveal bg-background">
                 <img

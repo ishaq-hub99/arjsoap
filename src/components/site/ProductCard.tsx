@@ -37,17 +37,23 @@ export function ProductCard({ product }: { product: Product }) {
           ))}
         </ul>
         <div className="mt-auto pt-7">
-          <Link to="/brands" hash={product.slug} className="btn-primary w-full">
-            {t("View Product", "ምርቱን ይመልከቱ")}
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link to="/contact" className="btn-primary w-full sm:flex-1">
+              {t("Request a Quote", "የዋጋ ጥያቄ ያቅርቡ")}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link to="/brands" hash={product.slug} className="btn-outline w-full sm:flex-1">
+              {t("View Product", "ምርቱን ይመልከቱ")}
+            </Link>
+          </div>
           <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
             {t(
-              "Manufactured by ARJ Soap Detergent & Manufacturing — Sebeta, Ethiopia",
-              "በARJ Soap Detergent & Manufacturing የተመረተ — ሰበታ, ኢትዮጵያ",
+              "An ARJ brand — manufactured by ARJ Soap, Detergent & Manufacturing in Sebeta, Ethiopia",
+              "የኤ.አር.ጄ ብራንድ — በARJ Soap Detergent & Manufacturing የተመረተ — ሰበታ, ኢትዮጵያ",
             )}
           </p>
         </div>
+
       </div>
     </article>
   );

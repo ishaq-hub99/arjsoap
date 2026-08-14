@@ -3,7 +3,7 @@ import { ArrowRight, Building2, Check, Factory, PackageCheck, ShieldCheck } from
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { SectionHeading } from "@/components/site/PageHero";
-import { adwaImage, amardImage, useProducts, useWhyChooseArj } from "@/components/site/products";
+import { adwaImage, amardImage, useProducts } from "@/components/site/products";
 import { photos } from "@/components/site/photos";
 import { LocalizedHead, useCopy, type Lang } from "@/lib/i18n";
 
@@ -34,9 +34,36 @@ const copy = {
     heroBadge: "Manufacturing in Sebeta, Ethiopia since 2022",
     heroTitle: "Quality Laundry Soap, Made in Ethiopia",
     heroDescription:
-      "ARJ Soap Detergent & Manufacturing produces quality solid laundry soaps through its trusted brands, AMARD and ADWA.",
-    exploreProducts: "Explore Our Products",
-    contactUs: "Contact Us",
+      "ARJ Soap, Detergent & Manufacturing is an Ethiopian manufacturing company operating a facility in Sebeta. We manufacture our own brands, AMARD and ADWA laundry soap.",
+    exploreProducts: "View Products",
+    contactUs: "Contact ARJ",
+    aboutArj: "About ARJ",
+    requestQuote: "Request a Quote",
+    whyArj: {
+      eyebrow: "Why ARJ?",
+      title: "Why work with ARJ",
+      description:
+        "A local manufacturer focused on consistent production and dependable supply for retailers and distributors.",
+      items: [
+        {
+          title: "Local Manufacturing",
+          body: "Manufactured in Ethiopia at our own facility in Sebeta.",
+        },
+        {
+          title: "Quality Focused",
+          body: "Production and packaging are organised around consistent, dependable quality.",
+        },
+        {
+          title: "Reliable Supply",
+          body: "Finished stock is packed and stored at the facility, ready for dispatch.",
+        },
+        {
+          title: "Growing Ethiopian Brands",
+          body: "AMARD and ADWA are ARJ's own laundry soap brands.",
+        },
+      ],
+    },
+
     relationshipLabel: "One manufacturer, two brands",
     relationshipBody:
       "Both laundry soap brands are manufactured by ARJ Soap Detergent & Manufacturing in Sebeta, Ethiopia.",
@@ -104,7 +131,34 @@ const copy = {
     heroDescription:
       "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በታመኑ ብራንዶቹ አማርድ እና አድዋ ጥራት ያለው ጠንካራ የልብስ ማጠቢያ ሳሙና ያመርታል።",
     exploreProducts: "ምርቶቻችንን ይመልከቱ",
-    contactUs: "ያግኙን",
+    contactUs: "ኤ.አር.ጄን ያግኙ",
+    aboutArj: "ስለ ኤ.አር.ጄ",
+    requestQuote: "የዋጋ ጥያቄ ያቅርቡ",
+    whyArj: {
+      eyebrow: "ለምን ኤ.አር.ጄ?",
+      title: "ለምን ከኤ.አር.ጄ ጋር ይሠራሉ",
+      description:
+        "ወጥ የሆነ ምርትና አስተማማኝ አቅርቦት ላይ የሚያተኩር የአገር ውስጥ አምራች።",
+      items: [
+        {
+          title: "የአገር ውስጥ ምርት",
+          body: "በሰበታ በሚገኘው የራሳችን ፋብሪካ በኢትዮጵያ የሚመረት።",
+        },
+        {
+          title: "ጥራትን ማዕከል ያደረገ",
+          body: "ምርትና ማሸግ ወጥ የሆነ ጥራትን ለማረጋገጥ ተደራጅተዋል።",
+        },
+        {
+          title: "አስተማማኝ አቅርቦት",
+          body: "የተጠናቀቀ ምርት በፋብሪካው ታሽጎ ተከማችቶ ለመላክ ዝግጁ ይሆናል።",
+        },
+        {
+          title: "እያደጉ ያሉ የኢትዮጵያ ብራንዶች",
+          body: "አማርድ እና አድዋ የኤ.አር.ጄ የራሱ የልብስ ማጠቢያ ሳሙና ብራንዶች ናቸው።",
+        },
+      ],
+    },
+
     relationshipLabel: "አንድ አምራች፣ ሁለት ብራንዶች",
     relationshipBody:
       "ሁለቱም የልብስ ማጠቢያ ሳሙና ብራንዶች የሚመረቱት በኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ ነው።",
@@ -213,7 +267,6 @@ function useBrandCards() {
 function Home() {
   const c = useCopy(copy);
   const products = useProducts();
-  const whyChooseArj = useWhyChooseArj();
   const brandCards = useBrandCards();
 
   return (
@@ -237,15 +290,19 @@ function Home() {
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {c.heroDescription}
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/products" className="btn-primary">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link to="/products" className="btn-primary w-full sm:w-auto">
                 {c.exploreProducts}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="btn-outline">
+              <Link to="/about" className="btn-outline w-full sm:w-auto">
+                {c.aboutArj}
+              </Link>
+              <Link to="/contact" className="btn-outline w-full sm:w-auto">
                 {c.contactUs}
               </Link>
             </div>
+
 
             {/* ARJ -> AMARD + ADWA relationship */}
             <div className="mt-12 rounded-2xl border border-border bg-background/70 p-6 shadow-card">
@@ -390,18 +447,18 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <section className="py-20 sm:py-28">
+      {/* WHY ARJ */}
+      <section className="py-16 sm:py-24 lg:py-28">
         <div className="section-shell">
           <SectionHeading
             centered
-            eyebrow={c.why.eyebrow}
-            title={c.why.title}
-            description={c.why.description}
+            eyebrow={c.whyArj.eyebrow}
+            title={c.whyArj.title}
+            description={c.whyArj.description}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {whyChooseArj.map((item, i) => (
-              <div key={item.title} className="surface-card reveal p-7">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-4">
+            {c.whyArj.items.map((item, i) => (
+              <div key={item.title} className="surface-card reveal p-6 sm:p-7">
                 <span className="font-display text-sm font-extrabold text-primary">
                   0{i + 1}
                 </span>
@@ -412,6 +469,7 @@ function Home() {
           </div>
         </div>
       </section>
+
 
       {/* FACTORY */}
       <section className="border-y border-border bg-secondary py-20 sm:py-28">
@@ -462,7 +520,7 @@ function Home() {
       </section>
 
       {/* PRODUCT STRIP */}
-      <section className="border-t border-border bg-secondary py-20 sm:py-28">
+      <section className="border-t border-border bg-secondary py-16 sm:py-24 lg:py-28">
         <div className="section-shell">
           <SectionHeading
             centered
@@ -470,7 +528,7 @@ function Home() {
             title={c.productsStrip.title}
             description={c.productsStrip.description}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-3">
             {products.map((product) => (
               <Link
                 key={product.slug}
@@ -484,36 +542,36 @@ function Home() {
                     loading="lazy"
                     width={480}
                     height={480}
-                    className="mx-auto h-40 w-full object-contain"
+                    className="mx-auto h-44 w-full object-contain sm:h-48"
                   />
                 </div>
                 <div className="border-t border-border p-5">
-                  <h3 className="display-title text-base text-foreground">{product.name}</h3>
+                  <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.2em] text-primary">
+                    {c.manufacturedByArj}
+                  </p>
+                  <h3 className="display-title mt-2 text-base text-foreground">{product.name}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{product.type}</p>
                 </div>
               </Link>
             ))}
-            <div className="surface-card reveal grid place-items-center p-6 text-center">
+            <div className="surface-card reveal grid place-items-center p-7 text-center sm:col-span-2 lg:col-span-1">
               <div>
                 <p className="text-sm font-semibold text-foreground">{c.seeProductDetails}</p>
-                <Link to="/products" className="btn-outline mt-5 px-5 py-2.5">
-                  {c.productsLink}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-            <div className="surface-card reveal grid place-items-center p-6 text-center">
-              <div>
-                <p className="text-sm font-semibold text-foreground">{c.qualityStandards}</p>
-                <Link to="/quality" className="btn-outline mt-5 px-5 py-2.5">
-                  {c.qualityLink}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                <div className="mt-6 flex flex-col items-center gap-3">
+                  <Link to="/products" className="btn-primary w-full">
+                    {c.exploreProducts}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link to="/contact" className="btn-outline w-full">
+                    {c.requestQuote}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <ContactCta />
     </>

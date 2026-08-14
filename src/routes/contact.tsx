@@ -51,7 +51,7 @@ const copy = {
     },
     details: {
       eyebrow: "Company Details",
-      title: "ARJ Soap Detergent &amp; Manufacturing",
+      title: "ARJ Soap, Detergent & Manufacturing",
       location: { label: "Location", value: "Sebeta, Ethiopia", helper: "See the map below for the facility location." },
       phone: { label: "Phone" },
       email: { label: "Email", value: "Email address to be added by ARJ." },
@@ -84,7 +84,7 @@ const copy = {
     },
     map: {
       eyebrow: "Find Us",
-      title: "ARJ Soap Detergent &amp; Manufacturing",
+      title: "ARJ Soap, Detergent & Manufacturing",
       description: "Sebeta, Ethiopia. Use the map below for directions to our facility.",
       iframeTitle: "Map of ARJ Soap Detergent & Manufacturing, Sebeta, Ethiopia",
       directions: "Get directions on Google Maps",
