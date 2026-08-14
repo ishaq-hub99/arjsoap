@@ -64,8 +64,11 @@ const copy = {
         message: { label: "Message", placeholder: "How can we help you?" },
       },
       submit: "Send Message",
+      submitting: "Sending...",
       success:
-        "Thank you — your message has been recorded. Please also call us on the numbers listed if your enquiry is urgent.",
+        "Thank you — your message has been sent. Please also call us on the numbers listed if your enquiry is urgent.",
+      failure:
+        "Sorry, your message could not be sent. Please try again or call us on the numbers listed.",
       errors: {
         nameMin: "Please enter your full name",
         nameMax: "Name is too long",
@@ -114,8 +117,11 @@ const copy = {
         message: { label: "መልዕክት", placeholder: "እንዴት ልንረዳዎት እንችላለን?" },
       },
       submit: "መልዕክት ላክ",
+      submitting: "በመላክ ላይ...",
       success:
         "እናመሰግናለን! መልዕክትዎ ደርሶናል። ጉዳዩ አስቸኳይ ከሆነ እባክዎ ከላይ በተጠቀሱት ስልክ ቁጥሮች ደውለው ያነጋግሩን።",
+      failure:
+        "ይቅርታ፣ መልዕክትዎ አልተላከም። እባክዎ እንደገና ይሞክሩ ወይም ከላይ በተጠቀሱት ስልክ ቁጥሮች ደውለው ያነጋግሩን።",
       errors: {
         nameMin: "እባክዎ ሙሉ ስምዎን ያስገቡ",
         nameMax: "ስሙ በጣም ረዥም ነው",
