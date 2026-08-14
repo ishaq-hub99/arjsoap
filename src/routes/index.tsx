@@ -34,9 +34,36 @@ const copy = {
     heroBadge: "Manufacturing in Sebeta, Ethiopia since 2022",
     heroTitle: "Quality Laundry Soap, Made in Ethiopia",
     heroDescription:
-      "ARJ Soap Detergent & Manufacturing produces quality solid laundry soaps through its trusted brands, AMARD and ADWA.",
-    exploreProducts: "Explore Our Products",
-    contactUs: "Contact Us",
+      "ARJ Soap, Detergent & Manufacturing is an Ethiopian manufacturing company operating a facility in Sebeta. We manufacture our own brands, AMARD and ADWA laundry soap.",
+    exploreProducts: "View Products",
+    contactUs: "Contact ARJ",
+    aboutArj: "About ARJ",
+    requestQuote: "Request a Quote",
+    whyArj: {
+      eyebrow: "Why ARJ?",
+      title: "Why work with ARJ",
+      description:
+        "A local manufacturer focused on consistent production and dependable supply for retailers and distributors.",
+      items: [
+        {
+          title: "Local Manufacturing",
+          body: "Manufactured in Ethiopia at our own facility in Sebeta.",
+        },
+        {
+          title: "Quality Focused",
+          body: "Production and packaging are organised around consistent, dependable quality.",
+        },
+        {
+          title: "Reliable Supply",
+          body: "Finished stock is packed and stored at the facility, ready for dispatch.",
+        },
+        {
+          title: "Growing Ethiopian Brands",
+          body: "AMARD and ADWA are ARJ's own laundry soap brands.",
+        },
+      ],
+    },
+
     relationshipLabel: "One manufacturer, two brands",
     relationshipBody:
       "Both laundry soap brands are manufactured by ARJ Soap Detergent & Manufacturing in Sebeta, Ethiopia.",
