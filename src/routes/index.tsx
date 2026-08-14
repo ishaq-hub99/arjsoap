@@ -291,15 +291,19 @@ function Home() {
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {c.heroDescription}
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link to="/products" className="btn-primary">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link to="/products" className="btn-primary w-full sm:w-auto">
                 {c.exploreProducts}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="btn-outline">
+              <Link to="/about" className="btn-outline w-full sm:w-auto">
+                {c.aboutArj}
+              </Link>
+              <Link to="/contact" className="btn-outline w-full sm:w-auto">
                 {c.contactUs}
               </Link>
             </div>
+
 
             {/* ARJ -> AMARD + ADWA relationship */}
             <div className="mt-12 rounded-2xl border border-border bg-background/70 p-6 shadow-card">
