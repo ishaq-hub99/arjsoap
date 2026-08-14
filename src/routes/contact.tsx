@@ -146,7 +146,7 @@ const copy = {
 function Contact() {
   const c = useCopy(copy);
   const [errors, setErrors] = useState<FieldErrors>({});
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   const contactSchema = z.object({
     name: z.string().trim().min(2, c.form.errors.nameMin).max(100, c.form.errors.nameMax),
@@ -155,9 +155,10 @@ function Contact() {
     message: z.string().trim().min(10, c.form.errors.messageMin).max(1000, c.form.errors.messageMax),
   });
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const formEl = event.currentTarget;
+    const form = new FormData(formEl);
     const result = contactSchema.safeParse({
       name: String(form.get("name") ?? ""),
       phone: String(form.get("phone") ?? ""),
@@ -172,13 +173,33 @@ function Contact() {
         if (!fieldErrors[key]) fieldErrors[key] = issue.message;
       }
       setErrors(fieldErrors);
-      setSubmitted(false);
+      setStatus("idle");
       return;
     }
 
     setErrors({});
-    setSubmitted(true);
-    event.currentTarget.reset();
+    setStatus("sending");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new URLSearchParams({
+          name: result.data.name,
+          phone: result.data.phone,
+          email: result.data.email,
+          subject: `Website enquiry from ${result.data.name}`,
+          message: result.data.message,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Formspree submission failed");
+
+      setStatus("success");
+      formEl.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   const fields = [
