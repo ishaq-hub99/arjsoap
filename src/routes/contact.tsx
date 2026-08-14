@@ -29,6 +29,8 @@ export const Route = createFileRoute("/contact")({
 
 type FieldErrors = Partial<Record<"name" | "phone" | "email" | "message", string>>;
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/moealbog";
+
 const phones = [
   { display: "+251 911 314 758", href: "tel:+251911314758" },
   { display: "+251 911 235 104", href: "tel:+251911235104" },
@@ -303,12 +305,27 @@ function Contact() {
                   <p className="mt-1.5 text-xs font-semibold text-destructive">{errors.message}</p>
                 ) : null}
               </div>
-              <button type="submit" className="btn-primary w-full">
-                {c.form.submit}
+              <button
+                type="submit"
+                className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? c.form.submitting : c.form.submit}
               </button>
-              {submitted ? (
-                <p className="rounded-md bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground">
+              {status === "success" ? (
+                <p
+                  role="status"
+                  className="rounded-md bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground"
+                >
                   {c.form.success}
+                </p>
+              ) : null}
+              {status === "error" ? (
+                <p
+                  role="alert"
+                  className="rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm font-semibold text-destructive"
+                >
+                  {c.form.failure}
                 </p>
               ) : null}
             </form>
