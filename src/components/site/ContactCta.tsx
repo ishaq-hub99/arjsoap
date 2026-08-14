@@ -10,7 +10,7 @@ const copy = {
     description:
       "For orders, distribution and product enquiries, reach our team in Sebeta, Ethiopia. Products are distributed mainly from the factory and through Merkato.",
     location: "Sebeta, Ethiopia",
-    cta: "Go to contact page",
+    cta: "Contact ARJ",
   },
   am: {
     eyebrow: "አግኙን",

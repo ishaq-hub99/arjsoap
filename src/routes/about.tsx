@@ -44,8 +44,9 @@ const copy = {
         "ARJ Soap Detergent & Manufacturing was established in 2022 G.C. / 2014 E.C. in Sebeta, Ethiopia. The company manufactures solid laundry soap using modern machinery imported from China, with production, packaging and product storage handled at its facility.",
     },
     storyBody:
-      "ARJ produces two solid laundry soap brands, AMARD and ADWA, both made at its facility in Sebeta.",
+      "ARJ produces two solid laundry soap brands, AMARD and ADWA — both are ARJ's own brands, manufactured at its facility in Sebeta with a focus on consistent quality and reliable supply.",
     factoryCta: "Explore Our Factory",
+    productsCta: "View Products",
     photoAlt: "Stacks of wrapped AMARD laundry soap bars at the ARJ facility in Sebeta",
     timelineEyebrow: "Timeline",
     timelineTitle: "How ARJ developed",
@@ -105,6 +106,7 @@ const copy = {
     storyBody:
       "ኤ.አር.ጄ በሰበታ ፋብሪካው ሁለት ጠንካራ የልብስ ማጠቢያ ሳሙና ብራንዶችን ያመርታል፣ አማርድ እና አድዋ።",
     factoryCta: "ፋብሪካችንን ይመልከቱ",
+    productsCta: "ምርቶችን ይመልከቱ",
     photoAlt: "የታሸጉ የአማርድ ልብስ ማጠቢያ ሳሙና ብሎኮች ክምር በኤ.አር.ጄ ፋብሪካ ውስጥ",
     timelineEyebrow: "የጊዜ መስመር",
     timelineTitle: "የኤ.አር.ጄ ጉዞ",
@@ -169,10 +171,15 @@ function About() {
               description={c.story.description}
             />
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">{c.storyBody}</p>
-            <Link to="/factory" className="btn-primary mt-9">
-              {c.factoryCta}
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link to="/factory" className="btn-primary w-full sm:w-auto">
+                {c.factoryCta}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+              <Link to="/products" className="btn-outline w-full sm:w-auto">
+                {c.productsCta}
+              </Link>
+            </div>
           </div>
           <div className="photo-frame reveal bg-background">
             <img
