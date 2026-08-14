@@ -521,7 +521,7 @@ function Home() {
       </section>
 
       {/* PRODUCT STRIP */}
-      <section className="border-t border-border bg-secondary py-20 sm:py-28">
+      <section className="border-t border-border bg-secondary py-16 sm:py-24 lg:py-28">
         <div className="section-shell">
           <SectionHeading
             centered
@@ -529,7 +529,7 @@ function Home() {
             title={c.productsStrip.title}
             description={c.productsStrip.description}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-3">
             {products.map((product) => (
               <Link
                 key={product.slug}
@@ -543,36 +543,36 @@ function Home() {
                     loading="lazy"
                     width={480}
                     height={480}
-                    className="mx-auto h-40 w-full object-contain"
+                    className="mx-auto h-44 w-full object-contain sm:h-48"
                   />
                 </div>
                 <div className="border-t border-border p-5">
-                  <h3 className="display-title text-base text-foreground">{product.name}</h3>
+                  <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.2em] text-primary">
+                    {c.manufacturedByArj}
+                  </p>
+                  <h3 className="display-title mt-2 text-base text-foreground">{product.name}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{product.type}</p>
                 </div>
               </Link>
             ))}
-            <div className="surface-card reveal grid place-items-center p-6 text-center">
+            <div className="surface-card reveal grid place-items-center p-7 text-center sm:col-span-2 lg:col-span-1">
               <div>
                 <p className="text-sm font-semibold text-foreground">{c.seeProductDetails}</p>
-                <Link to="/products" className="btn-outline mt-5 px-5 py-2.5">
-                  {c.productsLink}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-            <div className="surface-card reveal grid place-items-center p-6 text-center">
-              <div>
-                <p className="text-sm font-semibold text-foreground">{c.qualityStandards}</p>
-                <Link to="/quality" className="btn-outline mt-5 px-5 py-2.5">
-                  {c.qualityLink}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
+                <div className="mt-6 flex flex-col items-center gap-3">
+                  <Link to="/products" className="btn-primary w-full">
+                    {c.exploreProducts}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                  <Link to="/contact" className="btn-outline w-full">
+                    {c.requestQuote}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <ContactCta />
     </>
