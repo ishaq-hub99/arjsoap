@@ -1,11 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { useProducts } from "@/components/site/products";
 import { photos } from "@/components/site/photos";
-import { LocalizedHead, useCopy, type Lang } from "@/lib/i18n";
+import { LocalizedHead, useCopy, useT, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
@@ -76,6 +77,7 @@ const copy = {
 function Products() {
   const c = useCopy(copy);
   const products = useProducts();
+  const t = useT();
 
   return (
     <>
@@ -89,8 +91,8 @@ function Products() {
         description={c.hero.description}
       />
 
-      <section className="py-20 sm:py-28">
-        <div className="section-shell grid gap-8 lg:grid-cols-2">
+      <section className="py-16 sm:py-24 lg:py-28">
+        <div className="section-shell grid gap-6 sm:gap-8 lg:grid-cols-2">
           {products.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
@@ -121,6 +123,10 @@ function Products() {
               </p>
               <p className="mt-2 text-sm text-muted-foreground">{c.packDetails.body}</p>
             </div>
+            <Link to="/contact" className="btn-primary mt-8 w-full sm:w-auto">
+              {t("Request a Quote", "የዋጋ ጥያቄ ያቅርቡ")}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
