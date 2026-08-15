@@ -30,7 +30,7 @@ export default defineConfig({
           prerender: { enabled: true, crawlLinks: true },
           pages: prerenderPages.map((path) => ({ path, prerender: { enabled: true } })),
         },
-        nitro: { preset: "static" },
+        nitro: false,
       }
     : {
         tanstackStart: {
