@@ -1,9 +1,7 @@
-import adwaAsset from "@/assets/adwa-pack.jpg.asset.json";
-import amardAsset from "@/assets/amard-pack.jpg.asset.json";
 import { useCopy, type Lang } from "@/lib/i18n";
 
-export const amardImage = amardAsset.url;
-export const adwaImage = adwaAsset.url;
+export const amardImage = "/images/amard-pack.jpg";
+export const adwaImage = "/images/adwa-pack.jpg";
 
 export type Product = {
   slug: string;

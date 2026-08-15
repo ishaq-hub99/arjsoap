@@ -6,10 +6,37 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Static export mode (`bun run build:static` / `npm run build:static`) prerenders every
+// route to plain HTML for upload to ordinary shared hosting. The normal Lovable build
+// (`build` / `build:dev`) is untouched and still runs on the server runtime.
+const isStaticExport = process.env["STATIC_EXPORT"] === "1";
+
+const prerenderPages = [
+  "/",
+  "/about",
+  "/brands",
+  "/products",
+  "/factory",
+  "/quality",
+  "/vision",
+  "/contact",
+  "/404",
+];
+
 export default defineConfig({
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-  },
+  ...(isStaticExport
+    ? {
+        tanstackStart: {
+          prerender: { enabled: true, crawlLinks: true },
+          pages: prerenderPages.map((path) => ({ path, prerender: { enabled: true } })),
+        },
+        nitro: false,
+      }
+    : {
+        tanstackStart: {
+          // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+          // nitro/vite builds from this
+          server: { entry: "server" },
+        },
+      }),
 });
