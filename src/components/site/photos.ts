@@ -1,25 +1,14 @@
-import adwaVictoryGrater from "@/assets/adwa-victory-grater.jpg.asset.json";
-import adwaVictoryTowels from "@/assets/adwa-victory-towels.jpg.asset.json";
-import adwaLaundryLine from "@/assets/adwa-laundry-line.jpg.asset.json";
-import adwaSunkissed from "@/assets/adwa-sunkissed.jpg.asset.json";
-import adwaYellowBar from "@/assets/adwa-yellow-bar.jpg.asset.json";
-import adwaCartonsStack from "@/assets/adwa-cartons-stack.jpg.asset.json";
-import packagingMachine from "@/assets/packaging-machine.jpg.asset.json";
-import adwaCartonsWarehouse from "@/assets/adwa-cartons-warehouse.jpg.asset.json";
-import amardBarsStacked from "@/assets/amard-bars-stacked.jpg.asset.json";
-import adwaWrappedBox from "@/assets/adwa-wrapped-box.jpg.asset.json";
-
 export const photos = {
-  adwaVictoryGrater: adwaVictoryGrater.url,
-  adwaVictoryTowels: adwaVictoryTowels.url,
-  adwaLaundryLine: adwaLaundryLine.url,
-  adwaSunkissed: adwaSunkissed.url,
-  adwaYellowBar: adwaYellowBar.url,
-  adwaCartonsStack: adwaCartonsStack.url,
-  packagingMachine: packagingMachine.url,
-  adwaCartonsWarehouse: adwaCartonsWarehouse.url,
-  amardBarsStacked: amardBarsStacked.url,
-  adwaWrappedBox: adwaWrappedBox.url,
+  adwaVictoryGrater: "/images/adwa-victory-grater.jpg",
+  adwaVictoryTowels: "/images/adwa-victory-towels.jpg",
+  adwaLaundryLine: "/images/adwa-laundry-line.jpg",
+  adwaSunkissed: "/images/adwa-sunkissed.jpg",
+  adwaYellowBar: "/images/adwa-yellow-bar.jpg",
+  adwaCartonsStack: "/images/adwa-cartons-stack.jpg",
+  packagingMachine: "/images/packaging-machine.jpg",
+  adwaCartonsWarehouse: "/images/adwa-cartons-warehouse.jpg",
+  amardBarsStacked: "/images/amard-bars-stacked.jpg",
+  adwaWrappedBox: "/images/adwa-wrapped-box.jpg",
 };
 
 export const factoryGallery = [
