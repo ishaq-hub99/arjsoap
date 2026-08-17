@@ -34,7 +34,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/moealbog";
 const phones = [
   { display: "+251 911 314 758", href: "tel:+251911314758" },
   { display: "+251 911 235 104", href: "tel:+251911235104" },
-];
+]; const whatsappHref = "https://wa.me/251911314758";
 
 const copy = {
   en: {
@@ -78,7 +78,7 @@ const copy = {
         phoneMax: "Phone is too long",
         emailInvalid: "Please enter a valid email address",
         emailMax: "Email is too long",
-        messageMin: "Please write a short message",
+        messageMin: "Please write a longer message",
         messageMax: "Message is too long",
       },
     },
@@ -155,6 +155,7 @@ function Contact() {
     phone: z.string().trim().min(7, c.form.errors.phoneMin).max(30, c.form.errors.phoneMax),
     email: z.string().trim().email(c.form.errors.emailInvalid).max(255, c.form.errors.emailMax),
     message: z.string().trim().min(10, c.form.errors.messageMin).max(1000, c.form.errors.messageMax),
+    enquiryType: z.string(),
   });
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -166,6 +167,7 @@ function Contact() {
       phone: String(form.get("phone") ?? ""),
       email: String(form.get("email") ?? ""),
       message: String(form.get("message") ?? ""),
+      enquiryType: String(form.get("enquiryType") ?? "General enquiry"),
     });
 
     if (!result.success) {
@@ -192,6 +194,7 @@ function Contact() {
           email: result.data.email,
           subject: `Website enquiry from ${result.data.name}`,
           message: result.data.message,
+          enquiryType: result.data.enquiryType,
         }),
       });
 
@@ -245,7 +248,44 @@ function Contact() {
                       >
                         {p.display}
                       </a>
-                    ))}
+                    ))}  
+                    <div className="mt-4 flex flex-wrap gap-3">
+  <a
+    href={whatsappHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact ARJ on WhatsApp"
+    className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.55 0 .24 5.31.24 11.83c0 2.08.54 4.11 1.57 5.9L.15 24l6.43-1.69a11.8 11.8 0 0 0 5.49 1.35h.01c6.52 0 11.83-5.31 11.83-11.83 0-3.16-1.23-6.13-3.39-8.35ZM12.08 21.65h-.01a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.82 1 1.02-3.72-.23-.38a9.8 9.8 0 1 1 8.4 4.68Zm5.38-7.35c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.19.29-.76.95-.93 1.14-.17.2-.34.22-.63.07-.29-.15-1.21-.45-2.31-1.43-.85-.76-1.43-1.7-1.6-1.99-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.19-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44s1.05 2.83 1.19 3.02c.15.2 2.06 3.14 4.99 4.4.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.11.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.27-.19-.56-.34Z" />
+    </svg>
+    WhatsApp
+  </a>
+
+  <a
+    href="https://t.me/ARJ2014"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact ARJ on Telegram"
+    className="inline-flex items-center gap-2 rounded-md bg-[#229ED9] px-4 py-2.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M21.5 3.5 2.7 10.75c-.95.38-.94.91-.17 1.15l4.82 1.5 1.85 5.75c.22.61.11.86.74.86.49 0 .7-.22.97-.48l2.34-2.27 4.87 3.6c.89.49 1.53.23 1.75-.83l3.13-14.76c.32-1.3-.5-1.89-1.5-1.27ZM8.1 13.07l10.82-6.82c.54-.33 1.03-.15.63.21l-8.92 8.05-.35 3.76-1.75-5.2-.43-.13Z" />
+    </svg>
+    Telegram
+  </a>
+</div>
                   </div>
                 </div>
               </li>
@@ -286,6 +326,28 @@ function Contact() {
                   ) : null}
                 </div>
               ))}
+
+              <div>
+  <label
+    htmlFor="enquiryType"
+    className="block text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-foreground"
+  >
+    Enquiry Type
+  </label>
+
+  <select
+    id="enquiryType"
+    name="enquiryType"
+    defaultValue="General enquiry"
+    className="mt-2.5 w-full rounded-md border border-input bg-background px-4 py-3.5 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/30"
+  >
+    <option value="General enquiry">General enquiry</option>
+    <option value="Product / Order enquiry">Product / Order enquiry</option>
+    <option value="Become a distributor">Become a distributor</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
               <div>
                 <label
                   htmlFor="message"
