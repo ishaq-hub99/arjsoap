@@ -39,7 +39,8 @@ const copy = {
       description:
         "ARJ Soap, Detergent & Manufacturing operates a dedicated soap and detergent manufacturing facility in Sebeta, Ethiopia, equipped with modern machinery imported from China and focused on consistent production and quality.",
     },
-    packagingAlt: "ADWA branded wrapping film feeding through the packaging machine at the ARJ facility",
+    packagingAlt:
+      "ADWA branded wrapping film feeding through the packaging machine at the ARJ facility",
     sections: [
       {
         title: "Factory Overview",
@@ -83,7 +84,8 @@ const copy = {
     gallery: {
       eyebrow: "Factory Gallery",
       title: "Inside the ARJ facility",
-      description: "Production, wrapping, packing and storage of AMARD and ADWA laundry soap in Sebeta, Ethiopia.",
+      description:
+        "Production, wrapping, packing and storage of AMARD and ADWA laundry soap in Sebeta, Ethiopia.",
       alts: [
         "ADWA branded wrapping film running through the packaging machine at the ARJ factory",
         "Freshly formed yellow ADWA laundry soap bar with embossed logo at the ARJ factory",
@@ -140,8 +142,7 @@ const copy = {
     storage: {
       eyebrow: "ማከማቻ እና ስርጭት",
       title: "ለስርጭት ዝግጁ የሆነ የምርት ክምችት",
-      description:
-        "የተጠናቀቁ የአማርድ እና የአድዋ ካርቶኖች በፋብሪካው ተከማችተው ከፋብሪካው እና በመርካቶ በኩል ለገበያ ይለቀቃሉ።",
+      description: "የተጠናቀቁ የአማርድ እና የአድዋ ካርቶኖች በፋብሪካው ተከማችተው ከፋብሪካው እና በመርካቶ በኩል ለገበያ ይለቀቃሉ።",
       body: "ካርቶኖቹ ከመላካቸው በፊት በማከማቻ ክፍሉ ውስጥ በፓሌት ተደራርበው ይቀመጣሉ።",
       photoAlt: "የአድዋ የልብስ ማጠቢያ ሳሙና ካርቶኖች ፓሌት ላይ ተደራርበው በማከማቻ ክፍል ውስጥ",
     },
@@ -179,11 +180,7 @@ function FactoryPage() {
         title={{ en: copy.en.headTitle, am: copy.am.headTitle }}
         description={{ en: copy.en.headDescription, am: copy.am.headDescription }}
       />
-      <PageHero
-        eyebrow={c.hero.eyebrow}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-16 sm:py-24 lg:py-28">
         <div className="section-shell">

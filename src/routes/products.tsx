@@ -34,7 +34,8 @@ const copy = {
     hero: {
       eyebrow: "Products",
       title: "Our solid laundry soaps",
-      description: "ARJ produces two solid laundry soaps, both manufactured at our facility in Sebeta, Ethiopia.",
+      description:
+        "ARJ produces two solid laundry soaps, both manufactured at our facility in Sebeta, Ethiopia.",
     },
     warehouseAlt: "Pallets of ADWA laundry soap cartons in the ARJ product storage area",
     availability: {
@@ -54,8 +55,8 @@ const copy = {
   am: {
     hero: {
       eyebrow: "ምርቶች",
-      title: "ጠጣር የልብስ ሳሙናዎቻችን",
-      description: "ኤ.አር.ጄ በሰበታ፣ ኢትዮጵያ በሚገኘው ፋብሪካችን የሚመረቱ ሁለት ጠጣር የልብስ ሳሙናዎችን ያመርታል።",
+      title: "የልብስ ሳሙናዎቻችን",
+      description: "ኤ.አር.ጄ በሰበታ፣ ኢትዮጵያ በሚገኘው ፋብሪካችን የሚመረቱ ሁለት የልብስ ሳሙናዎችን ያመርታል።",
     },
     warehouseAlt: "የአድዋ የልብስ ሳሙና ካርቶኖች በኤ.አር.ጄ ምርት ማከማቻ ውስጥ ተደርድረው",
     availability: {
@@ -68,9 +69,9 @@ const copy = {
       label: "የማሸጊያ ዝርዝር",
       body: "የማሸጊያ መጠን፣ የካርቶን ብዛት እና የክብደት መጠን ኤ.አር.ጄ ካረጋገጠ በኋላ እዚህ ይገለጻል።",
     },
-    headTitle: "ምርቶች | አማርድ እና አድዋ ጠጣር የልብስ ሳሙና",
+    headTitle: "ምርቶች | አማርድ እና አድዋ የልብስ ሳሙና",
     headDescription:
-      "የኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ ምርቶች፦ አማርድ የልብስ ሳሙና እና አድዋ የልብስ ሳሙና፣ በሰበታ፣ ኢትዮጵያ የተመረቱ ጠጣር ሳሙና ብሎኮች።",
+      "የኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ ምርቶች፦ አማርድ የልብስ ሳሙና እና አድዋ የልብስ ሳሙና፣ በሰበታ፣ ኢትዮጵያ የተመረቱ ሳሙና ብሎኮች።",
   },
 } satisfies Record<Lang, unknown>;
 
@@ -85,11 +86,7 @@ function Products() {
         title={{ en: copy.en.headTitle, am: copy.am.headTitle }}
         description={{ en: copy.en.headDescription, am: copy.am.headDescription }}
       />
-      <PageHero
-        eyebrow={c.hero.eyebrow}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-16 sm:py-24 lg:py-28">
         <div className="section-shell grid gap-6 sm:gap-8 lg:grid-cols-2">

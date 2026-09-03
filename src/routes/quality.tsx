@@ -121,7 +121,10 @@ function Quality() {
   const c = useCopy(copy);
   return (
     <>
-      <LocalizedHead title={{ en: copy.en.head.title, am: copy.am.head.title }} description={{ en: copy.en.head.description, am: copy.am.head.description }} />
+      <LocalizedHead
+        title={{ en: copy.en.head.title, am: copy.am.head.title }}
+        description={{ en: copy.en.head.description, am: copy.am.head.description }}
+      />
       <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-20 sm:py-28">

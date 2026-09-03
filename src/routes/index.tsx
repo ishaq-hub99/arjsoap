@@ -31,10 +31,10 @@ export const Route = createFileRoute("/")({
 
 const copy = {
   en: {
-    heroBadge: "Manufacturing in Sebeta, Ethiopia since 2022",
+    heroBadge: "ARJ Soap Detergent & Manufacturing · Sebeta, Ethiopia",
     heroTitle: "Quality Laundry Soap, Made in Ethiopia",
     heroDescription:
-      "ARJ Soap, Detergent & Manufacturing is an Ethiopian manufacturing company operating a facility in Sebeta. We manufacture our own brands, AMARD and ADWA laundry soap.",
+  "ARJ Soap Detergent & Manufacturing is an Ethiopian manufacturer of solid laundry soap, producing its own brands, AMARD and ADWA, at its facility in Sebeta.",
     exploreProducts: "View Products",
     contactUs: "Contact ARJ",
     aboutArj: "About ARJ",
@@ -106,7 +106,8 @@ const copy = {
       description:
         "Based in Sebeta, Ethiopia, ARJ operates a dedicated manufacturing facility equipped with modern machinery imported from China.",
     },
-    factoryPhotoAlt: "Pallets of ADWA laundry soap cartons stored at the ARJ manufacturing facility",
+    factoryPhotoAlt:
+      "Pallets of ADWA laundry soap cartons stored at the ARJ manufacturing facility",
     factoryBody:
       "Our products are manufactured, packaged, stored and distributed from our facility, with distribution also reaching Merkato.",
     exploreFactory: "Explore Our Factory",
@@ -126,26 +127,27 @@ const copy = {
       "ARJ Soap Detergent & Manufacturing in Sebeta, Ethiopia produces quality solid laundry soaps through its brands AMARD and ADWA.",
   },
   am: {
-    heroBadge: "ከ2022 ዓ.ም ጀምሮ በሰበታ፣ ኢትዮጵያ የምናመርት",
-    heroTitle: "ጥራት ያለው የልብስ ማጠቢያ ሳሙና፣ በኢትዮጵያ የተመረተ",
-    heroDescription:
-      "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በታመኑ ብራንዶቹ አማርድ እና አድዋ ጥራት ያለው ጠንካራ የልብስ ማጠቢያ ሳሙና ያመርታል።",
+    heroBadge: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ · ሰበታ፣ ኢትዮጵያ",
+
+heroTitle: "ጥራት ያለው የልብስ ማጠቢያ ሳሙና፣ በኢትዮጵያ የተመረተ",
+
+heroDescription:
+  "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ ፋብሪካው የራሱን የልብስ ማጠቢያ ሳሙና ብራንዶች፣ አማርድ እና አድዋን የሚያመርት የኢትዮጵያ አምራች ነው።",
     exploreProducts: "ምርቶቻችንን ይመልከቱ",
     contactUs: "ኤ.አር.ጄን ያግኙ",
     aboutArj: "ስለ ኤ.አር.ጄ",
     requestQuote: "የዋጋ ጥያቄ ያቅርቡ",
     whyArj: {
       eyebrow: "ለምን ኤ.አር.ጄ?",
-      title: "ለምን ከኤ.አር.ጄ ጋር ይሠራሉ",
-      description:
-        "ወጥ የሆነ ምርትና አስተማማኝ አቅርቦት ላይ የሚያተኩር የአገር ውስጥ አምራች።",
+      title: "ለምን ኤ.አር.ጄን ይመርጣሉ?",
+      description: "ወጥ የሆነ ምርትና አስተማማኝ አቅርቦት ላይ የሚያተኩር የአገር ውስጥ አምራች።",
       items: [
         {
           title: "የአገር ውስጥ ምርት",
           body: "በሰበታ በሚገኘው የራሳችን ፋብሪካ በኢትዮጵያ የሚመረት።",
         },
         {
-          title: "ጥራትን ማዕከል ያደረገ",
+         title: "ጥራትን ያስቀደመ",
           body: "ምርትና ማሸግ ወጥ የሆነ ጥራትን ለማረጋገጥ ተደራጅተዋል።",
         },
         {
@@ -160,8 +162,7 @@ const copy = {
     },
 
     relationshipLabel: "አንድ አምራች፣ ሁለት ብራንዶች",
-    relationshipBody:
-      "ሁለቱም የልብስ ማጠቢያ ሳሙና ብራንዶች የሚመረቱት በኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ ነው።",
+    relationshipBody: "ሁለቱም የልብስ ማጠቢያ ሳሙና ብራንዶች የሚመረቱት በኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ ነው።",
     laundrySoap: "ልብስ ማጠቢያ ሳሙና",
     manufacturedBy: "አምራች",
     manufacturerName: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ",
@@ -185,7 +186,7 @@ const copy = {
       {
         icon: ShieldCheck,
         title: "የተረጋገጠ",
-        body: "በኢትዮጵያ መንግስት ብቁ ሆኖ የተረጋገጠ",
+      body: "በኢትዮጵያ መንግስት እውቅና የተሰጠው",
       },
     ],
     learnMore: "ስለ ኤ.አር.ጄ የበለጠ ይወቁ",
@@ -198,12 +199,10 @@ const copy = {
     factory: {
       eyebrow: "ፋብሪካችን",
       title: "የማምረቻ ፋብሪካችን",
-      description:
-        "በሰበታ፣ ኢትዮጵያ የሚገኘው ኤ.አር.ጄ ከቻይና በገባ ዘመናዊ ማሽነሪ የተገጠመ የራሱ ማምረቻ ፋብሪካ ያንቀሳቅሳል።",
+      description: "በሰበታ፣ ኢትዮጵያ የሚገኘው ኤ.አር.ጄ ከቻይና በገባ ዘመናዊ ማሽነሪ የተገጠመ የራሱ ማምረቻ ፋብሪካ ያንቀሳቅሳል።",
     },
     factoryPhotoAlt: "የአድዋ ልብስ ማጠቢያ ሳሙና ካርቶኖች ፓሌቶች በኤ.አር.ጄ ማምረቻ ፋብሪካ ውስጥ የተከማቹ",
-    factoryBody:
-      "ምርቶቻችን ከፋብሪካችን ይመረታሉ፣ ይታሸጋሉ፣ ይከማቻሉ እና ይሰራጫሉ፣ ስርጭትም እስከ መርካቶ ይደርሳል።",
+    factoryBody: "ምርቶቻችን በፋብሪካችን ይመረታሉ፣ ይታሸጋሉ እና ይከማቻሉ። ምርቶቹ ከፋብሪካችን በቀጥታ ይሰራጫሉ።",
     exploreFactory: "ፋብሪካችንን ይመልከቱ",
     visionLabel: "ራዕያችን",
     visionQuote: "«በአፍሪካ ቁጥር አንድ የሳሙና ብራንድ መሆን።»",
@@ -235,14 +234,16 @@ const brandCardsBase = [
       "Soft on hands while washing",
       "Made from 100% vegetable oil according to the product packaging",
     ],
+
     featuresAm: [
-      "ረጅም ጊዜ የሚያገለግል",
-      "ተጨማሪ አረፋ ማውጣት",
-      "ኃይለኛ ማጽዳት",
-      "በሚያጥቡበት ጊዜ ለእጅ ገር የሆነ",
-      "እንደ ምርቱ መጠቅለያ መረጃ ከ100% የአትክልት ዘይት የተሠራ",
-    ],
+  "ረጅም ጊዜ የሚቆይ",
+  "በቂ አረፋ የሚያመነጭ",
+  "ኃይለኛ የማጽዳት አቅም",
+  "በሚያጥቡበት ጊዜ ለእጆች ገር የሆነ",
+  "ከ100% የአትክልት ዘይት የተሠራ",
+],
   },
+  
   {
     brand: "ADWA",
     image: adwaImage,
@@ -302,7 +303,6 @@ function Home() {
                 {c.contactUs}
               </Link>
             </div>
-
 
             {/* ARJ -> AMARD + ADWA relationship */}
             <div className="mt-12 rounded-2xl border border-border bg-background/70 p-6 shadow-card">
@@ -388,7 +388,10 @@ function Home() {
                   <ul className="mt-6 grid gap-2.5 border-t border-border pt-6 sm:grid-cols-2">
                     {card.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm text-foreground">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                        <Check
+                          className="mt-0.5 h-4 w-4 shrink-0 text-primary"
+                          aria-hidden="true"
+                        />
                         {f}
                       </li>
                     ))}
@@ -459,9 +462,7 @@ function Home() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-4">
             {c.whyArj.items.map((item, i) => (
               <div key={item.title} className="surface-card reveal p-6 sm:p-7">
-                <span className="font-display text-sm font-extrabold text-primary">
-                  0{i + 1}
-                </span>
+                <span className="font-display text-sm font-extrabold text-primary">0{i + 1}</span>
                 <h3 className="display-title mt-4 text-lg text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
               </div>
@@ -469,7 +470,6 @@ function Home() {
           </div>
         </div>
       </section>
-
 
       {/* FACTORY */}
       <section className="border-y border-border bg-secondary py-20 sm:py-28">
@@ -571,7 +571,6 @@ function Home() {
           </div>
         </div>
       </section>
-
 
       <ContactCta />
     </>

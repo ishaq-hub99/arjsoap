@@ -29,7 +29,7 @@ export const products: Product[] = [
       "Extra foaming",
       "Powerful cleaning",
       "Soft on hands while washing",
-      "Made from 100% vegetable oil according to the product packaging",
+      "Made from 100% vegetable oil",
     ],
   },
   {
@@ -71,29 +71,28 @@ const productsCopy = {
       slug: "amard",
       name: "አማርድ የልብስ ሳሙና",
       brand: "AMARD",
-      type: "ጠጣር የልብስ ሳሙና",
+      type: "የልብስ ሳሙና",
       image: amardImage,
       imageAlt: "አማርድ የልብስ ሳሙና በአረንጓዴ መጠቅለያ ውስጥ ከAMARD አርማ ጋር",
       description:
-        "ለዕለት ተዕለት ልብስ ማጠቢያ የተዘጋጀ ጠጣር ሳሙና — ረጅም ጊዜ የሚቆይ፣ ጥቅጥቅ ያለ አረፋ የሚፈጥር እና ለእጅ ገር የሆነ።",
+        "ለዕለት ተዕለት ልብስ ማጠቢያ የተዘጋጀ ጠጣር ሳሙና — ረጅም ጊዜ የሚቆይ፣ ደማቅ አረፋ የሚፈጥር እና ለእጅ ገር የሆነ።",
       features: [
         "ረጅም ጊዜ የሚቆይ",
-        "ጥቅጥቅ ያለ አረፋ",
-        "ኃይለኛ ማጽጃ",
-        "በማጠቢያ ጊዜ ለእጅ ገር",
-        "እንደ ማሸጊያው መረጃ ከ100% የአትክልት ዘይት የተሠራ",
+        "ደማቅ አረፋ",
+        "ውጤታማ ማጽጃ",
+        "ለእጅ ገር",
+        "100% የአትክልት ዘይት የተሠራ",
       ],
     },
     {
       slug: "adwa",
       name: "አድዋ የልብስ ሳሙና",
       brand: "ADWA",
-      type: "ጠጣር የልብስ ሳሙና",
+      type: "የልብስ ሳሙና",
       image: adwaImage,
       imageAlt: "አድዋ የልብስ ሳሙና በአረንጓዴ መጠቅለያ ውስጥ፣ ሲታሸግ 200 ግራም ጥቅል ክብደት",
-      description:
-        "ለዕለት ተዕለት ማጠቢያ የተዘጋጀ ጠጣር ሳሙና፣ ውጤታማ ማጽዳት እና ወፍራም አረፋ ያለው።",
-      features: ["ረጅም ጊዜ የሚቆይ", "ጥቅጥቅ ያለ አረፋ", "ውጤታማ ማጽዳት", "አዲስ የማጠቢያ ቀመር"],
+      description: "ለዕለት ተዕለት ማጠቢያ የተዘጋጀ ጠጣር ሳሙና፣ ውጤታማ ማጽዳት እና ወፍራም አረፋ ያለው።",
+      features: ["ረጅም ጊዜ የሚቆይ", "ደማቅ አረፋ", "ውጤታማ ማጽዳት", "አዲስ የማጠቢያ ቀመር"],
     },
   ] satisfies Product[],
 } satisfies Record<Lang, Product[]>;
@@ -106,16 +105,16 @@ const whyChooseArjCopy = {
       body: "ለዕለት ተዕለት ልብስ ማጠቢያ ዘላቂ አገልግሎት እንዲሰጥ ተደርጎ የተዘጋጀ።",
     },
     {
-      title: "ጥቅጥቅ ያለ አረፋ",
+      title: "ደማቅ አረፋ",
       body: "በማጠቢያ ወቅት የበለጸገ አረፋ ይሰጣል።",
     },
     {
-      title: "ኃይለኛ ማጽጃ",
+      title: "ከፍተኛ የማጽዳት አቅም",
       body: "ልብሶችን አጥርቶ ለማጽዳት ታስቦ የተሠራ።",
     },
     {
       title: "ለእጅ ገር",
-      body: "በሚያጥቡበት ጊዜ ለእጆች ገር ስሜት እንዲሰጥ ተደርጎ የተዘጋጀ።",
+      body: "በሚያጥቡበት ጊዜ ለእጆች ገር ተደርጎ የተዘጋጀ።",
     },
   ] satisfies { title: string; body: string }[],
 } satisfies Record<Lang, { title: string; body: string }[]>;

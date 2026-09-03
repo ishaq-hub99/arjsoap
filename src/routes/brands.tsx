@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Check } from "lucide-react";
+import { Check, Factory } from "lucide-react";
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
@@ -86,7 +86,7 @@ const copy = {
     },
     headTitle: "ብራንዶቻችን | አማርድ እና አድዋ የልብስ ሳሙና በኤ.አር.ጄ",
     headDescription:
-      "አማርድ እና አድዋ ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ የሚያመርታቸው ሁለት ጠጣር የልብስ ሳሙና ብራንዶች ናቸው።",
+      "አማርድ እና አድዋ ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ የሚያመርታቸው ሁለት የልብስ ሳሙና ብራንዶች ናቸው።",
   },
 } satisfies Record<Lang, unknown>;
 
@@ -100,11 +100,7 @@ function Brands() {
         title={{ en: copy.en.headTitle, am: copy.am.headTitle }}
         description={{ en: copy.en.headDescription, am: copy.am.headDescription }}
       />
-      <PageHero
-        eyebrow={c.hero.eyebrow}
-        title={c.hero.title}
-        description={c.hero.description}
-      />
+      <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       {products.map((product, index) => (
         <section
@@ -176,7 +172,6 @@ function Brands() {
               { src: photos.adwaSunkissed, alt: c.gallery.photos[1]?.alt ?? "" },
               { src: photos.adwaVictoryTowels, alt: c.gallery.photos[2]?.alt ?? "" },
               { src: photos.adwaLaundryLine, alt: c.gallery.photos[3]?.alt ?? "" },
-
             ].map((photo) => (
               <div key={photo.src} className="photo-frame reveal bg-background">
                 <img

@@ -40,12 +40,18 @@ const copy = {
         "Our vision starts with the bar itself. By keeping AMARD and ADWA long-lasting, high-foaming and soft on hands, we build the trust needed to grow beyond Sebeta and beyond Ethiopia.",
     },
     items: [
-      { title: "Consistent products", body: "Every carton that leaves the facility should match the last one." },
+      {
+        title: "Consistent products",
+        body: "Every carton that leaves the facility should match the last one.",
+      },
       {
         title: "Recognisable brands",
         body: "Clean, attractive packaging that customers can identify instantly.",
       },
-      { title: "Reliable supply", body: "Product stock kept ready at the facility for distribution." },
+      {
+        title: "Reliable supply",
+        body: "Product stock kept ready at the facility for distribution.",
+      },
     ],
     alt: "ADWA Laundry Soap packaging manufactured by ARJ",
     head: {
@@ -58,8 +64,7 @@ const copy = {
     hero: {
       eyebrow: "ራዕያችን",
       title: "ራዕያችን",
-      description:
-        "ኤ.አር.ጄ በሰበታ፣ ኢትዮጵያ የልብስ ማጠቢያ ሳሙና የሚያመርት ሲሆን፣ ራዕዩ ግን አህጉር አቀፍ ነው።",
+      description: "ኤ.አር.ጄ በሰበታ፣ ኢትዮጵያ የልብስ ማጠቢያ ሳሙና የሚያመርት ሲሆን፣ ራዕዩ ግን አህጉር አቀፍ ነው።",
     },
     quote: "«በአፍሪካ ቁጥር አንድ የሳሙና ብራንድ መሆን።»",
     company: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ",
@@ -90,7 +95,10 @@ function Vision() {
   const c = useCopy(copy);
   return (
     <>
-      <LocalizedHead title={{ en: copy.en.head.title, am: copy.am.head.title }} description={{ en: copy.en.head.description, am: copy.am.head.description }} />
+      <LocalizedHead
+        title={{ en: copy.en.head.title, am: copy.am.head.title }}
+        description={{ en: copy.en.head.description, am: copy.am.head.description }}
+      />
       <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-20 sm:py-28">

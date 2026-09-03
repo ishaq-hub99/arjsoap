@@ -17,7 +17,10 @@ export const navLinks = [
 
 export function useNavLinks() {
   const { lang } = useLang();
-  return navLinks.map((link) => ({ to: link.to, label: lang === "am" ? link.labelAm : link.label }));
+  return navLinks.map((link) => ({
+    to: link.to,
+    label: lang === "am" ? link.labelAm : link.label,
+  }));
 }
 
 function LanguageSwitch({ className = "" }: { className?: string }) {
