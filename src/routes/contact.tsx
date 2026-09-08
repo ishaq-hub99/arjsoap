@@ -251,11 +251,11 @@ function Contact() {
       <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-20 sm:py-28">
-        <div className="section-shell grid gap-12 lg:grid-cols-[1fr_1.15fr]">
+        <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <div>
             <SectionHeading eyebrow={c.details.eyebrow} title={c.details.title} />
-            <ul className="mt-10 space-y-5">
-              <li className="surface-card flex items-start gap-3.5 p-6">
+             <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+               <li className="surface-card flex items-start gap-3.5 p-6 sm:col-span-2 lg:col-span-1">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                 <div className="min-w-0">
                   <h3 className="text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-foreground">
@@ -271,12 +271,12 @@ function Contact() {
                   <h3 className="text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-foreground">
                     {c.details.phone.label}
                   </h3>
-                  <div className="mt-2 flex flex-col gap-1.5">
+                   <div className="mt-2 flex flex-col gap-2">
                     {phones.map((p) => (
                       <a
                         key={p.href}
                         href={p.href}
-                        className="text-sm font-bold text-foreground transition-colors hover:text-primary"
+                         className="w-fit text-base font-bold text-foreground transition-colors hover:text-primary"
                       >
                         {p.display}
                       </a>
@@ -287,7 +287,7 @@ function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Contact ARJ on WhatsApp"
-                        className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                         className="inline-flex min-h-11 items-center gap-2 rounded-md bg-whatsapp px-4 py-2.5 text-sm font-bold text-whatsapp-foreground transition-opacity hover:opacity-90"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -305,7 +305,7 @@ function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Contact ARJ on Telegram"
-                        className="inline-flex items-center gap-2 rounded-md bg-[#229ED9] px-4 py-2.5 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                         className="inline-flex min-h-11 items-center gap-2 rounded-md bg-telegram px-4 py-2.5 text-sm font-bold text-telegram-foreground transition-opacity hover:opacity-90"
                       >
                         <svg
                           viewBox="0 0 24 24"
@@ -333,12 +333,12 @@ function Contact() {
             </ul>
           </div>
 
-          <div className="surface-card p-7 sm:p-9">
+          <div className="surface-card p-6 sm:p-9">
             <h2 className="display-title text-xl text-foreground">{c.form.title}</h2>
             <p className="mt-2 text-sm text-muted-foreground">{c.form.subtitle}</p>
-            <form onSubmit={handleSubmit} className="mt-8 space-y-5" noValidate>
+             <form onSubmit={handleSubmit} className="mt-8 grid gap-5 sm:grid-cols-2" noValidate>
               {fields.map((field) => (
-                <div key={field.name}>
+                <div key={field.name} className={field.name === "email" ? "sm:col-span-2" : ""}>
                   <label
                     htmlFor={field.name}
                     className="block text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-foreground"
@@ -361,7 +361,7 @@ function Contact() {
                 </div>
               ))}
 
-              <div>
+              <div className="sm:col-span-2">
   <label
     htmlFor="enquiryType"
     className="block text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-foreground"
@@ -381,7 +381,7 @@ function Contact() {
     <option value="other">{c.form.fields.enquiryType.options.other}</option>
   </select>
 </div>
-              <div>
+               <div className="sm:col-span-2">
                 <label
                   htmlFor="message"
                   className="block text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-foreground"
@@ -402,7 +402,7 @@ function Contact() {
               </div>
               <button
                 type="submit"
-                className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60"
+                 className="btn-primary w-full sm:col-span-2 disabled:cursor-not-allowed disabled:opacity-60"
                 disabled={status === "sending"}
               >
                 {status === "sending" ? c.form.submitting : c.form.submit}
@@ -410,7 +410,7 @@ function Contact() {
               {status === "success" ? (
                 <p
                   role="status"
-                  className="rounded-md bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground"
+                   className="rounded-md bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground sm:col-span-2"
                 >
                   {c.form.success}
                 </p>
@@ -418,7 +418,7 @@ function Contact() {
               {status === "error" ? (
                 <p
                   role="alert"
-                  className="rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm font-semibold text-destructive"
+                   className="rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm font-semibold text-destructive sm:col-span-2"
                 >
                   {c.form.failure}
                 </p>

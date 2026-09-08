@@ -118,14 +118,14 @@ function Brands() {
             }`}
           >
             <div className={index % 2 === 0 ? "" : "lg:order-2"}>
-              <div className="photo-frame grid-tint bg-background p-10">
+              <div className="product-stage p-7 sm:p-10">
                 <img
                   src={product.image}
                   alt={product.imageAlt}
                   loading="lazy"
                   width={640}
                   height={640}
-                  className="mx-auto h-72 w-full object-contain sm:h-[24rem]"
+                  className="mx-auto h-72 w-full object-contain drop-shadow-xl sm:h-[26rem]"
                 />
               </div>
             </div>
@@ -166,14 +166,14 @@ function Brands() {
             title={c.gallery.title}
             description={c.gallery.description}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
             {[
               { src: photos.adwaVictoryGrater, alt: c.gallery.photos[0]?.alt ?? "" },
               { src: photos.adwaSunkissed, alt: c.gallery.photos[1]?.alt ?? "" },
               { src: photos.adwaVictoryTowels, alt: c.gallery.photos[2]?.alt ?? "" },
               { src: photos.adwaLaundryLine, alt: c.gallery.photos[3]?.alt ?? "" },
             ].map((photo) => (
-              <div key={photo.src} className="photo-frame reveal bg-background">
+              <div key={photo.src} className="photo-frame reveal bg-background lg:col-span-3 lg:first:col-span-6 lg:first:row-span-2 lg:nth-[2]:col-span-6">
                 <img
                   src={photo.src}
                   alt={photo.alt}

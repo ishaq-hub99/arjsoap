@@ -58,7 +58,7 @@ export function Header() {
   const isAm = lang === "am";
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md">
       <div className="hidden border-b border-border bg-primary-dark lg:block">
         <div className="section-shell flex items-center justify-between py-2 text-[0.7rem] font-bold uppercase tracking-[0.18em] text-primary-light">
           <span>
@@ -73,7 +73,7 @@ export function Header() {
       </div>
 
       <div className="border-b border-border">
-        <div className="section-shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:flex lg:justify-between lg:py-4">
+        <div className="section-shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 py-3 lg:flex lg:justify-between lg:py-3.5">
           <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
             <span className="grid h-12 w-12 shrink-0 place-items-center rounded-md bg-primary font-display text-base font-extrabold tracking-tight text-primary-foreground">
               ARJ
@@ -94,7 +94,7 @@ export function Header() {
                 key={link.to}
                 to={link.to}
                 activeOptions={{ exact: link.to === "/" }}
-                activeProps={{ className: "text-primary bg-accent" }}
+                activeProps={{ className: "text-primary bg-accent shadow-[inset_0_-2px_0_var(--primary)]" }}
                 inactiveProps={{ className: "text-muted-foreground" }}
                 className="whitespace-nowrap rounded-md px-2.5 py-2 text-[0.78rem] font-bold uppercase tracking-[0.04em] transition-colors hover:text-primary xl:px-3 xl:text-[0.8rem]"
               >
@@ -121,7 +121,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav className="border-b border-border bg-background lg:hidden">
+        <nav className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-b border-border bg-background shadow-card lg:hidden">
           <div className="section-shell flex flex-col py-2">
             {navLinks.map((link) => (
               <Link
@@ -129,7 +129,7 @@ export function Header() {
                 to={link.to}
                 onClick={() => setOpen(false)}
                 activeOptions={{ exact: link.to === "/" }}
-                activeProps={{ className: "text-primary" }}
+                activeProps={{ className: "border-l-2 border-l-primary bg-accent pl-3 text-primary" }}
                 inactiveProps={{ className: "text-foreground" }}
                 className="border-b border-border/60 py-3.5 text-sm font-bold uppercase tracking-[0.06em] last:border-0"
               >

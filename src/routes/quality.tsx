@@ -3,6 +3,7 @@ import { BadgeCheck, ClipboardCheck, Layers, Repeat, ShieldCheck } from "lucide-
 
 import { ContactCta } from "@/components/site/ContactCta";
 import { PageHero, SectionHeading } from "@/components/site/PageHero";
+import { photos } from "@/components/site/photos";
 import { LocalizedHead, useCopy, type Lang } from "@/lib/i18n";
 
 export const Route = createFileRoute("/quality")({
@@ -130,17 +131,29 @@ function Quality() {
       <section className="py-20 sm:py-28">
         <div className="section-shell">
           <SectionHeading centered eyebrow={c.approach.eyebrow} title={c.approach.title} />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch">
+            <div className="photo-frame reveal bg-background">
+              <img
+                src={photos.adwaYellowBar}
+                alt="ADWA laundry soap bar produced at the ARJ facility"
+                loading="lazy"
+                width={640}
+                height={640}
+                className="h-full min-h-80 w-full object-cover"
+              />
+            </div>
+            <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
             {pillars.map((item) => {
               const p = c.pillars[item.key];
               return (
-                <div key={item.key} className="surface-card reveal p-7">
+                <div key={item.key} className="reveal bg-background p-7">
                   <item.icon className="h-7 w-7 text-primary" aria-hidden="true" />
                   <h3 className="display-title mt-5 text-lg text-foreground">{p.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
               );
             })}
+            </div>
           </div>
         </div>
       </section>

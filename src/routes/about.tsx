@@ -162,7 +162,7 @@ function About() {
       <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-20 sm:py-28">
-        <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
           <div className="reveal">
             <SectionHeading
               eyebrow={c.story.eyebrow}
@@ -187,7 +187,7 @@ function About() {
               loading="lazy"
               width={1200}
               height={1400}
-              className="max-h-[34rem] w-full object-cover"
+              className="aspect-[4/5] max-h-[36rem] w-full object-cover"
             />
           </div>
         </div>
@@ -196,14 +196,10 @@ function About() {
       <section className="border-y border-border bg-secondary py-20 sm:py-28">
         <div className="section-shell">
           <SectionHeading eyebrow={c.timelineEyebrow} title={c.timelineTitle} />
-          <ol className="mt-12 space-y-6 border-l-2 border-primary/25 pl-7">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {c.timeline.map((item) => (
-              <li key={item.title} className="relative">
-                <span
-                  className="absolute -left-[2.05rem] top-6 grid h-4 w-4 place-items-center rounded-full border-2 border-primary bg-background"
-                  aria-hidden="true"
-                />
-                <div className="surface-card reveal p-7">
+              <li key={item.title} className="relative bg-background">
+                <div className="reveal h-full p-6 sm:p-7">
                   <span className="text-[0.68rem] font-extrabold uppercase tracking-[0.2em] text-primary">
                     {item.year}
                   </span>
