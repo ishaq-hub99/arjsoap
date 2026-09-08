@@ -167,11 +167,11 @@ const copy = {
 
 function FactoryPage() {
   const c = useCopy(copy);
-  const sections = c.sections.map((s, i) => ({ ...s, icon: sectionIcons[i] ?? sectionIcons[0]! }));
+  const sections = c.sections.map((s, i) => ({ ...s, icon: sectionIcons[i] ?? Factory }));
   const processSteps = c.process.steps.map((title, i) => ({
     step: String(i + 1).padStart(2, "0"),
     title,
-    icon: processIcons[i] ?? processIcons[0]!,
+    icon: processIcons[i] ?? Cog,
   }));
 
   return (
@@ -191,12 +191,12 @@ function FactoryPage() {
               loading="lazy"
               width={1600}
               height={912}
-              className="w-full object-cover"
+              className="aspect-[16/8] w-full object-cover object-center"
             />
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-3">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
             {sections.map((item) => (
-              <div key={item.title} className="surface-card reveal p-6 sm:p-7">
+              <div key={item.title} className="reveal bg-background p-6 sm:p-7">
                 <item.icon className="h-7 w-7 text-primary" aria-hidden="true" />
                 <h3 className="display-title mt-5 text-lg text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
@@ -287,16 +287,21 @@ function FactoryPage() {
             title={c.gallery.title}
             description={c.gallery.description}
           />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-3">
+          <div className="mt-12 grid auto-rows-[15rem] gap-4 sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2">
             {factoryGallery.map((photo, i) => (
-              <div key={photo.src} className="photo-frame reveal bg-background">
+              <div
+                key={photo.src}
+                className={`photo-frame reveal bg-background ${
+                  i === 0 || i === 4 ? "lg:col-span-5" : "lg:col-span-3"
+                } ${i === 2 || i === 5 ? "lg:col-span-4" : ""}`}
+              >
                 <img
                   src={photo.src}
                   alt={c.gallery.alts[i]}
                   loading="lazy"
                   width={640}
                   height={640}
-                  className="aspect-square w-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
             ))}

@@ -279,33 +279,30 @@ function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-border bg-secondary">
         <div className="grid-tint absolute inset-0" aria-hidden="true" />
-        <div className="section-shell relative grid gap-14 py-16 sm:py-24 lg:grid-cols-[1fr_1.05fr] lg:items-center lg:py-28">
+        <div className="section-shell relative grid gap-10 py-12 sm:py-20 lg:min-h-[42rem] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-16 lg:py-20">
           <div className="rise-in">
             <span className="hairline-label">
               <span className="h-px w-10 bg-primary" aria-hidden="true" />
               {c.heroBadge}
             </span>
-            <h1 className="display-title mt-6 text-[2.1rem] text-foreground sm:text-6xl lg:text-[4.25rem]">
+            <h1 className="display-title mt-5 max-w-3xl text-[2.25rem] text-foreground sm:text-6xl lg:text-[4.35rem]">
               {c.heroTitle}
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               {c.heroDescription}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link to="/products" className="btn-primary w-full sm:w-auto">
-                {c.exploreProducts}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link to="/contact" className="btn-primary w-full sm:w-auto">
+                {c.requestQuote}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
-              <Link to="/about" className="btn-outline w-full sm:w-auto">
-                {c.aboutArj}
-              </Link>
-              <Link to="/contact" className="btn-outline w-full sm:w-auto">
-                {c.contactUs}
+              <Link to="/products" className="btn-outline w-full sm:w-auto">
+                {c.exploreProducts}
               </Link>
             </div>
 
             {/* ARJ -> AMARD + ADWA relationship */}
-            <div className="mt-12 rounded-2xl border border-border bg-background/70 p-6 shadow-card">
+            <div className="mt-9 border-l-2 border-primary bg-background/70 px-5 py-4">
               <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-primary">
                 {c.relationshipLabel}
               </p>
@@ -329,30 +326,31 @@ function Home() {
           </div>
 
           <div className="relative rise-in">
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="product-stage relative grid min-h-[25rem] grid-cols-2 items-end gap-2 overflow-hidden p-4 sm:min-h-[34rem] sm:gap-5 sm:p-8">
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-accent" aria-hidden="true" />
               {brandCards.map((card) => (
-                <div key={card.brand} className="photo-frame bg-background p-6 sm:p-7">
+                <div key={card.brand} className="relative z-10 flex min-w-0 flex-col items-center">
                   <img
                     src={card.image}
                     alt={card.alt}
                     width={640}
                     height={640}
-                    className="mx-auto h-56 w-full object-contain sm:h-72"
+                    className="mx-auto h-56 w-full object-contain drop-shadow-xl sm:h-[25rem]"
                   />
-                  <p className="mt-5 text-center font-display text-xl font-extrabold uppercase tracking-tight text-primary">
+                  <p className="mt-1 text-center font-display text-lg font-extrabold uppercase text-primary sm:text-2xl">
                     {card.brand}
                   </p>
-                  <p className="mt-1 text-center text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                  <p className="mt-1 text-center text-[0.6rem] font-bold uppercase tracking-[0.14em] text-muted-foreground sm:text-[0.65rem]">
                     {c.laundrySoap}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="mt-6 rounded-xl border border-border bg-background px-5 py-4 shadow-card">
+            <div className="mt-4 flex items-center justify-between gap-4 border-b border-border bg-background px-1 py-4">
               <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.2em] text-primary">
                 {c.manufacturedBy}
               </p>
-              <p className="mt-1 text-sm font-bold text-foreground">{c.manufacturerName}</p>
+               <p className="text-right text-sm font-bold text-foreground">{c.manufacturerName}</p>
             </div>
           </div>
         </div>
@@ -367,10 +365,10 @@ function Home() {
             title={c.brands.title}
             description={c.brands.description}
           />
-          <div className="mt-14 grid gap-8 lg:grid-cols-2">
+           <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:gap-8">
             {brandCards.map((card) => (
-              <article key={card.brand} className="surface-card reveal overflow-hidden">
-                <div className="grid-tint border-b border-border bg-secondary p-10">
+               <article key={card.brand} className="surface-card reveal grid overflow-hidden md:grid-cols-[0.95fr_1.05fr] lg:grid-cols-1 xl:grid-cols-[0.95fr_1.05fr]">
+                 <div className="product-stage border-0 border-b border-border p-7 md:border-b-0 md:border-r lg:border-r-0 lg:border-b xl:border-r xl:border-b-0">
                   <img
                     src={card.image}
                     alt={card.alt}
@@ -380,7 +378,7 @@ function Home() {
                     className="mx-auto h-64 w-full object-contain sm:h-80"
                   />
                 </div>
-                <div className="p-8">
+                 <div className="flex flex-col justify-center p-7 sm:p-8">
                   <h3 className="display-title text-3xl text-primary sm:text-4xl">{card.brand}</h3>
                   <p className="mt-1 text-sm font-bold uppercase tracking-[0.18em] text-muted-foreground">
                     {c.laundrySoap}

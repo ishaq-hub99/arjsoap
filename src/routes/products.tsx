@@ -89,7 +89,7 @@ function Products() {
       <PageHero eyebrow={c.hero.eyebrow} title={c.hero.title} description={c.hero.description} />
 
       <section className="py-16 sm:py-24 lg:py-28">
-        <div className="section-shell grid gap-6 sm:gap-8 lg:grid-cols-2">
+        <div className="section-shell grid gap-8 lg:grid-cols-2">
           {products.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
@@ -98,14 +98,14 @@ function Products() {
 
       <section className="border-t border-border bg-secondary py-20 sm:py-28">
         <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="photo-frame reveal bg-background">
+          <div className="photo-frame reveal bg-background lg:order-2">
             <img
               src={photos.adwaCartonsWarehouse}
               alt={c.warehouseAlt}
               loading="lazy"
               width={1408}
               height={912}
-              className="w-full object-cover"
+              className="aspect-[4/3] w-full object-cover"
             />
           </div>
           <div className="reveal">

@@ -36,7 +36,7 @@ export function ContactCta() {
           </h2>
           <p className="mt-4 max-w-xl leading-relaxed text-primary-light">{c.description}</p>
         </div>
-        <div className="rounded-2xl bg-background p-7 shadow-card">
+        <div className="rounded-lg bg-background p-7 shadow-card">
           <ul className="space-y-5 text-sm">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />

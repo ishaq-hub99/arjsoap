@@ -103,7 +103,7 @@ function Vision() {
 
       <section className="py-20 sm:py-28">
         <div className="section-shell">
-          <div className="relative overflow-hidden rounded-3xl bg-primary-dark px-6 py-24 text-center sm:px-12">
+          <div className="relative overflow-hidden rounded-lg bg-primary-dark px-6 py-20 text-center sm:px-12 sm:py-24">
             <div className="grid-tint absolute inset-0 opacity-40" aria-hidden="true" />
             <div className="relative">
               <p className="mx-auto max-w-4xl font-display text-3xl font-extrabold leading-[1.1] tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
@@ -118,7 +118,7 @@ function Vision() {
       </section>
 
       <section className="border-y border-border bg-secondary py-20 sm:py-28">
-        <div className="section-shell grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
           <div className="reveal">
             <SectionHeading
               eyebrow={c.meaning.eyebrow}
@@ -134,14 +134,14 @@ function Vision() {
               ))}
             </ul>
           </div>
-          <div className="photo-frame grid-tint reveal bg-background p-10">
+          <div className="product-stage reveal p-8 sm:p-10">
             <img
               src={adwaImage}
               alt={c.alt}
               loading="lazy"
               width={640}
               height={640}
-              className="mx-auto h-72 w-full object-contain sm:h-[24rem]"
+              className="mx-auto h-72 w-full object-contain drop-shadow-xl sm:h-[26rem]"
             />
           </div>
         </div>
