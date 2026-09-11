@@ -64,11 +64,11 @@ const copy = {
     approach: { eyebrow: "Our Approach", title: "How we protect product quality" },
     certification: {
       eyebrow: "Certification",
-      title: "Certification documentation",
+      title: "Certification Documentation",
       description:
-        "ARJ holds the certifications required to manufacture soap in Ethiopia. Official documentation can be published in the spaces below once supplied.",
-      boxTitle: "Certification documentation",
-      boxBody: "Space reserved for official documentation supplied by ARJ.",
+        "ARJ maintains the documentation required for its soap manufacturing operations. Official certification documents can be published here once supplied.",
+      note: "For distribution, wholesale or compliance enquiries, our team can provide the relevant documentation on request.",
+      badge: "Documentation coming soon",
     },
     head: {
       title: "Quality & Standards | ARJ Soap Detergent & Manufacturing",
@@ -106,9 +106,9 @@ const copy = {
       eyebrow: "ማረጋገጫ",
       title: "የማረጋገጫ ሰነዶች",
       description:
-        "ኤ.አር.ጄ በኢትዮጵያ ውስጥ ሳሙና ለማምረት የሚያስፈልጉ ማረጋገጫዎችን ይዟል። ኦፊሴላዊ ሰነዶች ሲደርሱ ከዚህ በታች ባሉት ቦታዎች ይለጠፋሉ።",
-      boxTitle: "የማረጋገጫ ሰነድ",
-      boxBody: "ለኤ.አር.ጄ ኦፊሴላዊ ሰነዶች የተያዘ ቦታ።",
+        "ኤ.አር.ጄ ለሳሙና ማምረቻ ሥራው የሚያስፈልጉ ሰነዶችን ይዟል። ኦፊሴላዊ የማረጋገጫ ሰነዶች ሲቀርቡ በዚህ ገጽ ላይ ይለጠፋሉ።",
+      note: "ለስርጭት፣ ለጅምላ ግዢ ወይም ለሕጋዊ መስፈርት ጥያቄዎች ቡድናችን አግባብነት ያላቸውን ሰነዶች በጥያቄ መሠረት ማቅረብ ይችላል።",
+      badge: "ሰነዶቹ በቅርቡ ይቀርባሉ",
     },
     head: {
       title: "ጥራት እና ደረጃዎች | ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ",
