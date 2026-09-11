@@ -28,8 +28,8 @@ export const Route = createFileRoute("/factory")({
   component: FactoryPage,
 });
 
-const sectionIcons = [Factory, Cog, Boxes, PackageCheck, Warehouse, Truck];
-const processIcons = [Cog, ClipboardCheck, PackageCheck, Warehouse, Truck];
+const sectionIcons = [Factory, Cog];
+const processIcons = [Boxes, ClipboardCheck, PackageCheck, Warehouse, Truck];
 
 const copy = {
   en: {
@@ -50,28 +50,33 @@ const copy = {
         title: "Modern Machinery",
         body: "The facility is equipped with modern manufacturing machinery imported from China.",
       },
-      {
-        title: "Production",
-        body: "Soap is produced, formed and cut into solid bars for laundry use as part of an in-house production process.",
-      },
-      {
-        title: "Packaging",
-        body: "Bars are wrapped in clearly branded AMARD and ADWA packaging and packed into cartons.",
-      },
-      {
-        title: "Storage",
-        body: "Finished cartons are held in the product storage area at the facility, ready for dispatch.",
-      },
-      {
-        title: "Distribution",
-        body: "Products are distributed mainly from the facility and through Merkato.",
-      },
     ],
     process: {
       eyebrow: "Production Process",
       title: "From manufacturing to distribution",
       description: "How AMARD and ADWA laundry soap move through the ARJ facility.",
-      steps: ["Manufacturing", "Quality Check", "Packaging", "Storage", "Distribution"],
+      steps: [
+        {
+          title: "Manufacturing",
+          body: "Soap is produced, formed and cut into solid bars for laundry use as part of an in-house production process.",
+        },
+        {
+          title: "Quality Check",
+          body: "Production is carried out with quality as the main priority before bars move on to packaging.",
+        },
+        {
+          title: "Packaging",
+          body: "Bars are wrapped in clearly branded AMARD and ADWA packaging and packed into cartons.",
+        },
+        {
+          title: "Storage",
+          body: "Finished cartons are held in the product storage area at the facility, ready for dispatch.",
+        },
+        {
+          title: "Distribution",
+          body: "Products are distributed mainly from the facility and through Merkato.",
+        },
+      ],
     },
     storage: {
       eyebrow: "Storage & Distribution",
@@ -90,9 +95,9 @@ const copy = {
         "ADWA branded wrapping film running through the packaging machine at the ARJ factory",
         "Freshly formed yellow ADWA laundry soap bar with embossed logo at the ARJ factory",
         "Stacks of wrapped AMARD laundry soap bars ready for packing",
-        "Green wrapped 200g ADWA laundry soap bars packed into a carton",
-        "Pallets of 50 x 200g ADWA cartons stacked in the ARJ product storage area",
-        "Stacked ADWA laundry soap cartons packed 50 x 220g at the factory",
+        "Green wrapped ADWA laundry soap bars packed into a carton",
+        "Pallets of ADWA cartons stacked in the ARJ product storage area",
+        "Stacked ADWA laundry soap cartons at the ARJ factory",
       ],
     },
     headTitle: "Our Factory | ARJ Soap Manufacturing in Sebeta, Ethiopia",
@@ -116,28 +121,33 @@ const copy = {
         title: "ዘመናዊ ማሽነሪ",
         body: "ፋብሪካው ከቻይና በገቡ ዘመናዊ የማምረቻ ማሽነሪዎች የተደራጀ ነው።",
       },
-      {
-        title: "የምርት ሂደት",
-        body: "ሳሙናው በውስጣችን ባለው የምርት ሂደት ተመርቶ፣ ተቀርጾ ለልብስ ማጠቢያ አገልግሎት የሚውል ጠንካራ ብሎክ ሆኖ ይቆረጣል።",
-      },
-      {
-        title: "ማሸግ",
-        body: "ብሎኮቹ በግልጽ በሚታወቁ የአማርድ እና የአድዋ ማሸጊያዎች ተጠቅልለው ወደ ካርቶን ይታሸጋሉ።",
-      },
-      {
-        title: "ማከማቻ",
-        body: "የተጠናቀቁ ካርቶኖች ለመላክ ዝግጁ ሆነው በፋብሪካው የምርት ማከማቻ ክፍል ይቀመጣሉ።",
-      },
-      {
-        title: "ስርጭት",
-        body: "ምርቶቻችን በዋናነት ከፋብሪካው እና በመርካቶ በኩል ለገበያ ይሰራጫሉ።",
-      },
     ],
     process: {
       eyebrow: "የምርት ሂደት",
       title: "ከማምረቻ እስከ ስርጭት",
       description: "የአማርድ እና የአድዋ የልብስ ማጠቢያ ሳሙና በኤ.አር.ጄ ፋብሪካ ውስጥ የሚያልፍበት ሂደት።",
-      steps: ["ማምረት", "የጥራት ቁጥጥር", "ማሸግ", "ማከማቻ", "ስርጭት"],
+      steps: [
+        {
+          title: "ማምረት",
+          body: "ሳሙናው በውስጣችን ባለው የምርት ሂደት ተመርቶ፣ ተቀርጾ ለልብስ ማጠቢያ አገልግሎት የሚውል ጠንካራ ብሎክ ሆኖ ይቆረጣል።",
+        },
+        {
+          title: "የጥራት ቁጥጥር",
+          body: "ምርቱ ወደ ማሸጊያ ከመሸጋገሩ በፊት ጥራትን በዋነኛነት መርህ አድርጎ ይከናወናል።",
+        },
+        {
+          title: "ማሸግ",
+          body: "ብሎኮቹ በግልጽ በሚታወቁ የአማርድ እና የአድዋ ማሸጊያዎች ተጠቅልለው ወደ ካርቶን ይታሸጋሉ።",
+        },
+        {
+          title: "ማከማቻ",
+          body: "የተጠናቀቁ ካርቶኖች ለመላክ ዝግጁ ሆነው በፋብሪካው የምርት ማከማቻ ክፍል ይቀመጣሉ።",
+        },
+        {
+          title: "ስርጭት",
+          body: "ምርቶቻችን በዋናነት ከፋብሪካው እና በመርካቶ በኩል ለገበያ ይሰራጫሉ።",
+        },
+      ],
     },
     storage: {
       eyebrow: "ማከማቻ እና ስርጭት",
@@ -154,9 +164,9 @@ const copy = {
         "የአድዋ ብራንድ ማሸጊያ ፊልም በኤ.አር.ጄ ፋብሪካ የማሸጊያ ማሽን ውስጥ ሲያልፍ",
         "አዲስ የተቀረጸ ቢጫ የአድዋ የልብስ ማጠቢያ ሳሙና ብሎክ በተቀረጸ አርማ በኤ.አር.ጄ ፋብሪካ",
         "የተጠቀለሉ የአማርድ የልብስ ማጠቢያ ሳሙና ብሎኮች ክምችት ለማሸግ ዝግጁ ሆነው",
-        "አረንጓዴ ተጠቅልለው የታሸጉ 200 ግራም የአድዋ የልብስ ማጠቢያ ሳሙና ብሎኮች በካርቶን ውስጥ",
-        "50 x 200 ግራም የአድዋ ካርቶኖች ፓሌት ላይ ተደራርበው በኤ.አር.ጄ ማከማቻ ክፍል ውስጥ",
-        "የተደራረቡ የአድዋ የልብስ ማጠቢያ ሳሙና ካርቶኖች 50 x 220 ግራም በፋብሪካው የታሸጉ",
+        "አረንጓዴ ተጠቅልለው የታሸጉ የአድዋ የልብስ ማጠቢያ ሳሙና ብሎኮች በካርቶን ውስጥ",
+        "የአድዋ ካርቶኖች ፓሌት ላይ ተደራርበው በኤ.አር.ጄ ማከማቻ ክፍል ውስጥ",
+        "የተደራረቡ የአድዋ የልብስ ማጠቢያ ሳሙና ካርቶኖች በኤ.አር.ጄ ፋብሪካ",
       ],
     },
     headTitle: "ፋብሪካችን | የኤ.አር.ጄ ሳሙና ማምረቻ በሰበታ፣ ኢትዮጵያ",
