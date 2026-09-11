@@ -59,7 +59,7 @@ const copy = {
         helper: "See the map below for the facility location.",
       },
       phone: { label: "Phone" },
-      email: { label: "Email", value: "Email address to be added by ARJ." },
+      email: { label: "Email", value: "Coming soon" },
     },
     form: {
       title: "Send us a message",
@@ -125,7 +125,7 @@ const copy = {
         helper: "የፋብሪካውን አድራሻ ከዚህ በታች ባለው ካርታ ላይ ይመልከቱ።",
       },
       phone: { label: "ስልክ" },
-      email: { label: "ኢሜይል", value: "የኢሜይል አድራሻ በኤ.አር.ጄ በቅርቡ ይታከላል።" },
+      email: { label: "ኢሜይል", value: "በቅርቡ" },
     },
     form: {
       title: "መልዕክት ይላኩልን",

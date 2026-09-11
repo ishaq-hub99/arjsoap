@@ -38,7 +38,7 @@ export const products: Product[] = [
     brand: "ADWA",
     type: "Solid laundry soap bar",
     image: adwaImage,
-    imageAlt: "ADWA Laundry Soap bar in green packaging, 200g net weight when packed",
+    imageAlt: "ADWA Laundry Soap bar in green ADWA-branded packaging",
     description:
       "A solid laundry soap made for everyday washing, with effective cleaning and a rich foam.",
     features: ["Long-lasting", "Extra foaming", "Effective cleaning", "New washing formula"],
@@ -90,7 +90,7 @@ const productsCopy = {
       brand: "ADWA",
       type: "የልብስ ሳሙና",
       image: adwaImage,
-      imageAlt: "አድዋ የልብስ ሳሙና በአረንጓዴ መጠቅለያ ውስጥ፣ ሲታሸግ 200 ግራም ጥቅል ክብደት",
+      imageAlt: "አድዋ የልብስ ሳሙና በአረንጓዴ የአድዋ ብራንድ መጠቅለያ ውስጥ",
       description: "ለዕለት ተዕለት ማጠቢያ የተዘጋጀ ጠጣር ሳሙና፣ ውጤታማ ማጽዳት እና ወፍራም አረፋ ያለው።",
       features: ["ረጅም ጊዜ የሚቆይ", "ደማቅ አረፋ", "ውጤታማ ማጽዳት", "አዲስ የማጠቢያ ቀመር"],
     },
