@@ -178,9 +178,10 @@ const copy = {
 function FactoryPage() {
   const c = useCopy(copy);
   const sections = c.sections.map((s, i) => ({ ...s, icon: sectionIcons[i] ?? Factory }));
-  const processSteps = c.process.steps.map((title, i) => ({
+  const processSteps = c.process.steps.map((s, i) => ({
     step: String(i + 1).padStart(2, "0"),
-    title,
+    title: s.title,
+    body: s.body,
     icon: processIcons[i] ?? Cog,
   }));
 
@@ -204,7 +205,7 @@ function FactoryPage() {
               className="aspect-[16/8] w-full object-cover object-center"
             />
           </div>
-          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:mt-12">
             {sections.map((item) => (
               <div key={item.title} className="reveal bg-background p-6 sm:p-7">
                 <item.icon className="h-7 w-7 text-primary" aria-hidden="true" />
