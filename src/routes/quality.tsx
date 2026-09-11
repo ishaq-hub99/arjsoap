@@ -64,11 +64,11 @@ const copy = {
     approach: { eyebrow: "Our Approach", title: "How we protect product quality" },
     certification: {
       eyebrow: "Certification",
-      title: "Certification documentation",
+      title: "Certification Documentation",
       description:
-        "ARJ holds the certifications required to manufacture soap in Ethiopia. Official documentation can be published in the spaces below once supplied.",
-      boxTitle: "Certification documentation",
-      boxBody: "Space reserved for official documentation supplied by ARJ.",
+        "ARJ maintains the documentation required for its soap manufacturing operations. Official certification documents can be published here once supplied.",
+      note: "For distribution, wholesale or compliance enquiries, our team can provide the relevant documentation on request.",
+      badge: "Documentation coming soon",
     },
     head: {
       title: "Quality & Standards | ARJ Soap Detergent & Manufacturing",
@@ -106,9 +106,9 @@ const copy = {
       eyebrow: "ማረጋገጫ",
       title: "የማረጋገጫ ሰነዶች",
       description:
-        "ኤ.አር.ጄ በኢትዮጵያ ውስጥ ሳሙና ለማምረት የሚያስፈልጉ ማረጋገጫዎችን ይዟል። ኦፊሴላዊ ሰነዶች ሲደርሱ ከዚህ በታች ባሉት ቦታዎች ይለጠፋሉ።",
-      boxTitle: "የማረጋገጫ ሰነድ",
-      boxBody: "ለኤ.አር.ጄ ኦፊሴላዊ ሰነዶች የተያዘ ቦታ።",
+        "ኤ.አር.ጄ ለሳሙና ማምረቻ ሥራው የሚያስፈልጉ ሰነዶችን ይዟል። ኦፊሴላዊ የማረጋገጫ ሰነዶች ሲቀርቡ በዚህ ገጽ ላይ ይለጠፋሉ።",
+      note: "ለስርጭት፣ ለጅምላ ግዢ ወይም ለሕጋዊ መስፈርት ጥያቄዎች ቡድናችን አግባብነት ያላቸውን ሰነዶች በጥያቄ መሠረት ማቅረብ ይችላል።",
+      badge: "ሰነዶቹ በቅርቡ ይቀርባሉ",
     },
     head: {
       title: "ጥራት እና ደረጃዎች | ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ",
@@ -165,21 +165,19 @@ function Quality() {
             title={c.certification.title}
             description={c.certification.description}
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="reveal grid min-h-52 place-items-center rounded-2xl border border-dashed border-input bg-background p-8 text-center"
-              >
-                <div>
-                  <BadgeCheck className="mx-auto h-8 w-8 text-primary" aria-hidden="true" />
-                  <p className="mt-4 text-sm font-bold uppercase tracking-[0.16em] text-foreground">
-                    {c.certification.boxTitle}
-                  </p>
-                  <p className="mt-2 text-xs text-muted-foreground">{c.certification.boxBody}</p>
-                </div>
-              </div>
-            ))}
+          <div className="surface-card reveal mt-10 flex flex-col gap-5 p-7 sm:flex-row sm:items-start sm:gap-6 sm:p-9">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-background text-primary">
+              <BadgeCheck className="h-6 w-6" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {c.certification.note}
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+                {c.certification.badge}
+              </span>
+            </div>
           </div>
         </div>
       </section>

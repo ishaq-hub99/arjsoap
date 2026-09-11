@@ -26,14 +26,14 @@ export const factoryGallery = [
   },
   {
     src: photos.adwaWrappedBox,
-    alt: "Green wrapped 200g ADWA laundry soap bars packed into a carton",
+    alt: "Green wrapped ADWA laundry soap bars packed into a carton",
   },
   {
     src: photos.adwaCartonsWarehouse,
-    alt: "Pallets of 50 x 200g ADWA cartons stacked in the ARJ product storage area",
+    alt: "Pallets of ADWA cartons stacked in the ARJ product storage area",
   },
   {
     src: photos.adwaCartonsStack,
-    alt: "Stacked ADWA laundry soap cartons packed 50 x 220g at the factory",
+    alt: "Stacked ADWA laundry soap cartons at the ARJ factory",
   },
 ];
