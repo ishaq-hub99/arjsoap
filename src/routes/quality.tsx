@@ -165,21 +165,19 @@ function Quality() {
             title={c.certification.title}
             description={c.certification.description}
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="reveal grid min-h-52 place-items-center rounded-2xl border border-dashed border-input bg-background p-8 text-center"
-              >
-                <div>
-                  <BadgeCheck className="mx-auto h-8 w-8 text-primary" aria-hidden="true" />
-                  <p className="mt-4 text-sm font-bold uppercase tracking-[0.16em] text-foreground">
-                    {c.certification.boxTitle}
-                  </p>
-                  <p className="mt-2 text-xs text-muted-foreground">{c.certification.boxBody}</p>
-                </div>
-              </div>
-            ))}
+          <div className="surface-card reveal mt-10 flex flex-col gap-5 p-7 sm:flex-row sm:items-start sm:gap-6 sm:p-9">
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-background text-primary">
+              <BadgeCheck className="h-6 w-6" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {c.certification.note}
+              </p>
+              <span className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+                {c.certification.badge}
+              </span>
+            </div>
           </div>
         </div>
       </section>
