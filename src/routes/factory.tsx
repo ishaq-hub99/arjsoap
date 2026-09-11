@@ -241,6 +241,9 @@ function FactoryPage() {
                   {s.step}
                 </p>
                 <h3 className="display-title mt-2 text-base text-foreground">{s.title}</h3>
+                <p className="mx-auto mt-3 max-w-[16rem] text-sm leading-relaxed text-muted-foreground">
+                  {s.body}
+                </p>
               </li>
             ))}
           </ol>
@@ -252,13 +255,14 @@ function FactoryPage() {
                   className="absolute -left-[2.2rem] top-5 grid h-5 w-5 place-items-center rounded-full border-2 border-primary bg-background"
                   aria-hidden="true"
                 />
-                <div className="surface-card flex items-center gap-4 p-5">
-                  <s.icon className="h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
-                  <div>
+                <div className="surface-card flex items-start gap-4 p-5">
+                  <s.icon className="mt-1 h-6 w-6 shrink-0 text-primary" aria-hidden="true" />
+                  <div className="min-w-0">
                     <p className="text-[0.65rem] font-extrabold uppercase tracking-[0.22em] text-primary">
                       {s.step}
                     </p>
                     <h3 className="display-title mt-1 text-base text-foreground">{s.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
                   </div>
                 </div>
               </li>
