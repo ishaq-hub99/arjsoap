@@ -66,14 +66,14 @@ const copy = {
 
     relationshipLabel: "One manufacturer, two brands",
     relationshipBody:
-      "Both laundry soap brands are manufactured by ARJ Soap Detergent & Manufacturing in Sebeta, Ethiopia.",
+      "The company's laundry soap is produced under these two brands.",
     laundrySoap: "Laundry Soap",
     manufacturedBy: "Manufactured by",
     manufacturerName: "ARJ Soap Detergent & Manufacturing",
     brands: {
       eyebrow: "Our Brands",
       title: "Our Brands",
-      description: "Two laundry soap brands, manufactured by ARJ.",
+      description: "Everyday laundry soap, made to clean effectively and last.",
     },
     manufacturedByArj: "Manufactured by ARJ",
     viewBrand: "View Brand",
@@ -116,7 +116,7 @@ const copy = {
     productsStrip: {
       eyebrow: "Our Products",
       title: "Two solid laundry soap brands",
-      description: "Both brands are manufactured at the ARJ facility in Sebeta, Ethiopia.",
+      description: "Product details, features and packaging for each brand.",
     },
     seeProductDetails: "See full product details and features",
     productsLink: "Products",
@@ -162,14 +162,14 @@ heroDescription:
     },
 
     relationshipLabel: "አንድ አምራች፣ ሁለት ብራንዶች",
-    relationshipBody: "ሁለቱም የልብስ ማጠቢያ ሳሙና ብራንዶች የሚመረቱት በኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በሰበታ፣ ኢትዮጵያ ነው።",
+    relationshipBody: "የድርጅቱ የልብስ ማጠቢያ ሳሙና በእነዚህ ሁለት ብራንዶች ይቀርባል።",
     laundrySoap: "ልብስ ማጠቢያ ሳሙና",
     manufacturedBy: "አምራች",
     manufacturerName: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ",
     brands: {
       eyebrow: "ብራንዶቻችን",
       title: "ብራንዶቻችን",
-      description: "በኤ.አር.ጄ የሚመረቱ ሁለት የልብስ ማጠቢያ ሳሙና ብራንዶች።",
+      description: "ለዕለት ተዕለት ልብስ ማጠቢያ የተዘጋጁ — ውጤታማ የማጽዳት አቅም ያላቸው እና ረጅም ጊዜ የሚቆዩ።",
     },
     manufacturedByArj: "በኤ.አር.ጄ የተመረተ",
     viewBrand: "ብራንዱን ይመልከቱ",
@@ -209,7 +209,7 @@ heroDescription:
     productsStrip: {
       eyebrow: "ምርቶቻችን",
       title: "ሁለት ጠንካራ የልብስ ማጠቢያ ሳሙና ብራንዶች",
-      description: "ሁለቱም ብራንዶች የሚመረቱት በኤ.አር.ጄ ፋብሪካ በሰበታ፣ ኢትዮጵያ ነው።",
+      description: "ለእያንዳንዱ ብራንድ የምርት ዝርዝር፣ ባህሪያት እና ማሸግ።",
     },
     seeProductDetails: "ሙሉ የምርት ዝርዝርና ባህሪያት ይመልከቱ",
     productsLink: "ምርቶች",
@@ -326,7 +326,7 @@ function Home() {
           </div>
 
           <div className="relative rise-in">
-            <div className="product-stage relative grid min-h-[25rem] grid-cols-2 items-end gap-2 overflow-hidden p-4 sm:min-h-[34rem] sm:gap-5 sm:p-8">
+            <div className="product-stage relative grid min-h-[20rem] grid-cols-2 items-end gap-2 overflow-hidden p-4 sm:min-h-[34rem] sm:gap-5 sm:p-8">
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-accent" aria-hidden="true" />
               {brandCards.map((card) => (
                 <div key={card.brand} className="relative z-10 flex min-w-0 flex-col items-center">
