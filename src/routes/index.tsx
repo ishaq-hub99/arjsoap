@@ -326,7 +326,7 @@ function Home() {
           </div>
 
           <div className="relative rise-in">
-            <div className="product-stage relative grid min-h-[25rem] grid-cols-2 items-end gap-2 overflow-hidden p-4 sm:min-h-[34rem] sm:gap-5 sm:p-8">
+            <div className="product-stage relative grid min-h-[20rem] grid-cols-2 items-end gap-2 overflow-hidden p-4 sm:min-h-[34rem] sm:gap-5 sm:p-8">
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-accent" aria-hidden="true" />
               {brandCards.map((card) => (
                 <div key={card.brand} className="relative z-10 flex min-w-0 flex-col items-center">
