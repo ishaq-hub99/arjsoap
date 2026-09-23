@@ -13,13 +13,13 @@ export const Route = createFileRoute("/quality")({
       {
         name: "description",
         content:
-          "ARJ Soap Detergent & Manufacturing is qualified and approved by the Ethiopian government and holds the certifications required for soap manufacturing.",
+          "ARJ Soap Detergent & Manufacturing is a soap manufacturing company in Sebeta, Ethiopia, focused on quality, standards and product consistency.",
       },
       { property: "og:title", content: "Quality & Standards — ARJ" },
       {
         property: "og:description",
         content:
-          "Government approval, quality control, manufacturing standards and product consistency at the ARJ facility in Sebeta, Ethiopia.",
+          "Quality control, manufacturing standards and product consistency at the ARJ facility in Sebeta, Ethiopia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/quality")({
 });
 
 const pillars = [
-  { key: "government", icon: ShieldCheck },
+  { key: "responsible", icon: ShieldCheck },
   { key: "quality", icon: ClipboardCheck },
   { key: "manufacturing", icon: Layers },
   { key: "consistency", icon: Repeat },
@@ -38,9 +38,9 @@ const pillars = [
 const copy = {
   en: {
     pillars: {
-      government: {
-        title: "Government Approval",
-        body: "ARJ Soap Detergent & Manufacturing is qualified and approved by the Ethiopian government.",
+      responsible: {
+        title: "Responsible Manufacturing",
+        body: "Manufacturing at the ARJ facility in Sebeta, Ethiopia, is carried out with attention to hygiene and responsible production.",
       },
       quality: {
         title: "Quality Control",
@@ -59,7 +59,7 @@ const copy = {
       eyebrow: "Quality & Standards",
       title: "Quality & Standards",
       description:
-        "ARJ Soap Detergent & Manufacturing is qualified and approved by the Ethiopian government and has the certifications required for soap manufacturing.",
+        "ARJ Soap Detergent & Manufacturing is a soap manufacturing company in Sebeta, Ethiopia, focused on quality, standards and product consistency.",
     },
     approach: { eyebrow: "Our Approach", title: "How we protect product quality" },
     certification: {
@@ -73,14 +73,14 @@ const copy = {
     head: {
       title: "Quality & Standards | ARJ Soap Detergent & Manufacturing",
       description:
-        "ARJ Soap Detergent & Manufacturing is qualified and approved by the Ethiopian government and holds the certifications required for soap manufacturing.",
+        "ARJ Soap Detergent & Manufacturing is a soap manufacturing company in Sebeta, Ethiopia, focused on quality, standards and product consistency.",
     },
   },
   am: {
     pillars: {
-      government: {
-        title: "የመንግስት ማረጋገጫ",
-        body: "ኤ.አር.ጄ ሳሙና፣ ዲተርጀንት እና ማምረቻ በኢትዮጵያ መንግስት ብቁ ሆኖ የተመዘገበና ፈቃድ የተሰጠው ድርጅት ነው።",
+      responsible: {
+        title: "ኃላፊነት የሚሰማው ማምረቻ",
+        body: "ማምረቱ በሰበታ፣ ኢትዮጵያ በሚገኘው የኤ.አር.ጄ ፋብሪካ ንጽህናን እና ኃላፊነት የሚሰማውን የማምረቻ አካሄድ በመከተል ይካሄዳል።",
       },
       quality: {
         title: "የጥራት ቁጥጥር",

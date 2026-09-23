@@ -29,7 +29,6 @@ export const products: Product[] = [
       "Extra foaming",
       "Powerful cleaning",
       "Soft on hands while washing",
-      "Made from 100% vegetable oil",
     ],
   },
   {
@@ -81,7 +80,6 @@ const productsCopy = {
         "ደማቅ አረፋ",
         "ውጤታማ ማጽጃ",
         "ለእጅ ገር",
-        "100% የአትክልት ዘይት የተሠራ",
       ],
     },
     {

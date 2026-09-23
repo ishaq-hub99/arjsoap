@@ -89,8 +89,8 @@ const copy = {
       { icon: PackageCheck, title: "Brands", body: "AMARD and ADWA laundry soap" },
       {
         icon: ShieldCheck,
-        title: "Approved",
-        body: "Qualified and approved by the Ethiopian government",
+        title: "Quality Focus",
+        body: "Quality-focused soap manufacturing in Sebeta, Ethiopia",
       },
     ],
     learnMore: "Learn More About ARJ",
@@ -185,8 +185,8 @@ heroDescription:
       { icon: PackageCheck, title: "ብራንዶች", body: "አማርድ እና አድዋ ልብስ ማጠቢያ ሳሙና" },
       {
         icon: ShieldCheck,
-        title: "የተረጋገጠ",
-      body: "በኢትዮጵያ መንግስት እውቅና የተሰጠው",
+        title: "የጥራት ትኩረት",
+      body: "በሰበታ፣ ኢትዮጵያ ጥራት ላይ የተመሰረተ የሳሙና ማምረቻ",
       },
     ],
     learnMore: "ስለ ኤ.አር.ጄ የበለጠ ይወቁ",
@@ -232,7 +232,6 @@ const brandCardsBase = [
       "Extra foaming",
       "Powerful cleaning",
       "Soft on hands while washing",
-      "Made from 100% vegetable oil according to the product packaging",
     ],
 
     featuresAm: [
@@ -240,7 +239,6 @@ const brandCardsBase = [
   "በቂ አረፋ የሚያመነጭ",
   "ኃይለኛ የማጽዳት አቅም",
   "በሚያጥቡበት ጊዜ ለእጆች ገር የሆነ",
-  "ከ100% የአትክልት ዘይት የተሠራ",
 ],
   },
   
