@@ -457,9 +457,14 @@ function Home() {
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:mt-14 lg:grid-cols-4">
             {c.whyArj.items.map((item, i) => (
-              <div key={item.title} className="surface-card reveal p-6 sm:p-7">
-                <span className="font-display text-sm font-extrabold text-primary">0{i + 1}</span>
-                <h3 className="display-title mt-4 text-lg text-foreground">{item.title}</h3>
+              <div
+                key={item.title}
+                className="surface-card reveal border-t-4 border-t-primary p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7"
+              >
+                <span className="font-display text-4xl font-extrabold leading-none text-primary/80">
+                  0{i + 1}
+                </span>
+                <h3 className="display-title mt-5 text-lg text-foreground">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
               </div>
             ))}
